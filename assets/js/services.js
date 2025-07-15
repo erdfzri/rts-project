@@ -4,7 +4,7 @@ const services = {
         icon: '<i class="fas fa-film"></i>',
         description: 'Jasa editing video profesional untuk konten sinematik, promosi, dan media sosial dengan color grading tingkat lanjut. Tim kami mengubah footage mentah Anda menjadi cerita visual yang menarik dan memperkuat branding Anda.',
         deliveryTime: '3–7 hari kerja',
-        startingPrice: 'Mulai dari Rp3.000.000',
+        startingPrice: 'Mulai dari Rp300.000',
         popularity: 'Paling Diminati',
         features: [
             'Editing Sinematik',
