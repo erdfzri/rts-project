@@ -25,7 +25,7 @@ const translations = {
             "hero-explore-services": "JELAJAHI LAYANAN",
             "hero-contact-me": "HUBUNGI SAYA",
             "about-name": "Erry Sandy",
-            "about-title": "CEO Of rtsprojects",
+            "about-title": "Co-Founder rtsprojects",
             "about-bio": "Saya mengubah cuplikan biasa menjadi karya sinematik. Dengan latar belakang teori film dan pengalaman lebih dari 7 tahun dalam pascaproduksi, saya menghadirkan presisi teknis dan visi artistik dalam setiap proyek.",
             "about-skill-1": "Ahli Adobe Premiere Pro, After Effects, dan DaVinci Resolve",
             "about-skill-2": "Arah kreatif & penceritaan visual",
@@ -100,7 +100,7 @@ const translations = {
             "hero-explore-services": "EXPLORE SERVICES",
             "hero-contact-me": "CONTACT ME",
             "about-name": "Erry Sandy",
-            "about-title": "CEO Of rtsprojects",
+            "about-title": "Co-Founder rtsprojects",
             "about-bio": "I transform ordinary footage into cinematic masterpieces. With a background in film theory and over 7 years of post-production experience, I bring technical precision and artistic vision to every project.",
             "about-skill-1": "Expert in Adobe Premiere Pro, After Effects, and DaVinci Resolve",
             "about-skill-2": "Creative direction & visual storytelling",
@@ -500,18 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * About section animations
      */
-    function initAboutAnimations() {
-        const profileContainer = document.querySelector('.profile-container');
-        if (profileContainer) {
-            document.addEventListener('mousemove', (e) => {
-                const x = (window.innerWidth / 2 - e.pageX) / 20;
-                const y = (window.innerHeight / 2 - e.pageY) / 20;
-                profileContainer.style.transform = `translate(${x}px, ${y}px)`;
-            });
-        }
-    }
 
-    document.addEventListener('DOMContentLoaded', initAboutAnimations);
 
     /**
      * Service cards animations
