@@ -46,23 +46,23 @@ const services = {
         examples: [
             { 
                 title: 'Aftermovie Festival Musik', 
-                image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?...',
-                link: 'all-work.html#video1'
+                videoId: 'otHgbeBWizE', // Ganti dengan ID YouTube yang sebenarnya
+                thumbnail: 'https://img.youtube.com/vi/otHgbeBWizE/maxresdefault.jpg'
             },
             { 
                 title: 'Video Promosi Brand', 
-                image: 'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?...',
-                link: 'all-work.html#video2'
+                videoId: '8NSoyBWMvSQ',
+                thumbnail: 'https://img.youtube.com/vi/8NSoyBWMvSQ/maxresdefault.jpg'
             },
             { 
                 title: 'Film Perjalanan', 
-                image: 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?...',
-                link: 'all-work.html#video3'
+                videoId: 'bXBn7v8OxPw',
+                thumbnail: 'https://img.youtube.com/vi/bXBn7v8OxPw/maxresdefault.jpg'
             },
             { 
                 title: 'Film Perjalanan', 
-                image: 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?...',
-                link: 'all-work.html#video3'
+                videoId: 'dpa6LDiyQow',
+                thumbnail: 'https://img.youtube.com/vi/dpa6LDiyQow/maxresdefault.jpg'
             }
         ]
     },
@@ -283,7 +283,6 @@ const services = {
 }
 
 
-// Update the JavaScript to populate all new sections
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const serviceId = urlParams.get('id');
@@ -359,77 +358,96 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 `;
                 faqAccordion.appendChild(faqItem);
-                
-                // Add click event for accordion
+
+                // Accordion toggle
                 const question = faqItem.querySelector('.faq-question');
                 question.addEventListener('click', () => {
                     faqItem.classList.toggle('active');
                 });
             });
         }
-        
+
         // Examples
         const examplesGrid = document.getElementById('examples-grid');
-        examplesGrid.innerHTML = '';
-        service.examples.forEach(example => {
-            const exampleDiv = document.createElement('div');
-            exampleDiv.className = 'example-item';
-            exampleDiv.innerHTML = `
-                <a href="${example.link}">
-                    <img src="${example.image}" alt="${example.title}">
-                    <div class="example-overlay">
-                        <h4>${example.title}</h4>
-                    </div>
-                </a>
-            `;
-            examplesGrid.appendChild(exampleDiv);
-        });
-    } else {
-        window.location.href = 'services.html';
+        if (examplesGrid && service.examples) {
+            examplesGrid.innerHTML = '';
+            service.examples.forEach(example => {
+                const exampleDiv = document.createElement('div');
+                exampleDiv.className = 'example-item';
+                
+                if (example.videoId) {
+                    exampleDiv.innerHTML = `
+                        <div class="video-container" data-video-id="${example.videoId}">
+                            <img src="${example.thumbnail}" alt="${example.title}" class="video-thumbnail">
+                            <div class="play-button"><i class="fas fa-play"></i></div>
+                            <div class="example-overlay">
+                                <h4>${example.title}</h4>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Play YouTube video on click
+                    exampleDiv.querySelector('.video-container').addEventListener('click', function() {
+                        const videoId = this.getAttribute('data-video-id');
+                        this.innerHTML = `
+                            <iframe width="100%" height="100%" 
+                                src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" 
+                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                                encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>
+                        `;
+                    });
+
+                } else {
+                    exampleDiv.innerHTML = `
+                        <a href="${example.link}">
+                            <img src="${example.image}" alt="${example.title}">
+                            <div class="example-overlay">
+                                <h4>${example.title}</h4>
+                            </div>
+                        </a>
+                    `;
+                }
+
+                examplesGrid.appendChild(exampleDiv);
+            });
+        }
+
+        // Animate populated elements
+        const animateElements = () => {
+            const featureItems = document.querySelectorAll('.service-features li');
+            featureItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            const processItems = document.querySelectorAll('.process-step');
+            processItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.2 + 0.1}s`;
+            });
+
+            const toolItems = document.querySelectorAll('.tool-item');
+            toolItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            const exampleItems = document.querySelectorAll('.example-item');
+            exampleItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.2 + 0.1}s`;
+            });
+
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.2 + 0.1}s`;
+            });
+
+            // Refresh AOS
+            setTimeout(() => {
+                if (typeof AOS !== 'undefined') {
+                    AOS.refresh();
+                }
+            }, 500);
+        };
+
+        setTimeout(animateElements, 300);
     }
-    // Di bagian akhir services.js, tambahkan:
-document.addEventListener('DOMContentLoaded', function() {
-    // Animate elements when they're populated
-    const animateElements = () => {
-        // Animate features list items
-        const featureItems = document.querySelectorAll('.service-features li');
-        featureItems.forEach((item, index) => {
-            item.style.animationDelay = `${index * 0.1}s`;
-        });
-
-        // Animate process steps
-        const processSteps = document.querySelectorAll('.process-step');
-        processSteps.forEach((step, index) => {
-            step.style.animationDelay = `${index * 0.2 + 0.1}s`;
-        });
-
-        // Animate tool items
-        const toolItems = document.querySelectorAll('.tool-item');
-        toolItems.forEach((tool, index) => {
-            tool.style.animationDelay = `${index * 0.1}s`;
-        });
-
-        // Animate example items
-        const exampleItems = document.querySelectorAll('.example-item');
-        exampleItems.forEach((example, index) => {
-            example.style.animationDelay = `${index * 0.2 + 0.1}s`;
-        });
-
-        // Animate FAQ items
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach((faq, index) => {
-            faq.style.animationDelay = `${index * 0.2 + 0.1}s`;
-        });
-
-        // Refresh AOS after content is loaded
-        setTimeout(() => {
-            if (typeof AOS !== 'undefined') {
-                AOS.refresh();
-            }
-        }, 500);
-    };
-
-    // Call the animation function after content is loaded
-    setTimeout(animateElements, 300);
-});
 });

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rtsprojects | Editor Profesional</title>
+    <title data-i18n="title">rtsprojects | Editor Profesional</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="img/video-editor-logo.jpg">
+    <link rel="icon" type="image/png" href="img/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -13,47 +13,88 @@
 <body>
     <div id="preloader"></div>
 
-    <header class="header">
-        <div class="header-container container">
-            <div class="logo">
-                <span>rtsproject</span>
-            </div>
-            <div class="menu-toggle">
-                    <div class="hamburger"></div>
-                </div>
-            <nav class="navmenu">
-                <ul>
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="index.html#services">Layanan</a></li>
-                    <li><a href="index.html#about">Tentang</a></li>
-                    <li><a href="index.html#clients">Klien</a></li>
-                    <li><a href="index.html#contact">Kontak</a></li>
-                </ul>
-                
-            </nav>
+  <header class="header">
+    <div class="header-container container">
+        <div class="logo">
+            <span>rtsproject</span>
         </div>
-    </header>
+       <nav class="navmenu">
+    <ul>
+        <li><a href="#home" data-i18n="nav-home">Beranda</a></li>
+        <li><a href="#services" data-i18n="nav-services">Layanan</a></li>
+        <li><a href="#about" data-i18n="nav-about">Tentang</a></li>
+        <li><a href="#clients" data-i18n="nav-clients">Klien</a></li>
+        <li><a href="#contact" data-i18n="nav-contact">Kontak</a></li>
+        <div class="language-switcher">
+        <div class="selected-lang">
+            <img src="img/indonesia.png" alt="Indonesia" class="flag-icon">
+            <span>Indonesia</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <ul class="language-options" id="language-options">
+            <li data-lang="id">
+                <img src="img/indonesia.png" alt="Indonesia" class="flag-icon"> Indonesia
+            </li>
+            <li data-lang="en">
+                <img src="img/inggris.png" alt="English" class="flag-icon"> English
+            </li>
+        </ul>
+    </div>
+    </ul>
+    
+</nav>
+        <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-close" id="mobile-menu-close">
+        <i class="fas fa-times"></i>
+    </div>
+    <ul>
+        <li><a href="#home" data-i18n="nav-home">Beranda</a></li>
+        <li><a href="#services" data-i18n="nav-services">Layanan</a></li>
+        <li><a href="#about" data-i18n="nav-about">Tentang</a></li>
+        <li><a href="#clients" data-i18n="nav-clients">Klien</a></li>
+        <li><a href="#contact" data-i18n="nav-contact">Kontak</a></li>
+        <li class="language-switcher-mobile">
+            <div class="language-switcher">
+                <div class="selected-lang">
+                    <img src="img/indonesia.png" alt="Indonesia" class="flag-icon">
+                    <span>Indonesia</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="language-options" id="language-options-mobile">
+                    <li data-lang="id">
+                        <img src="img/indonesia.png" alt="Indonesia" class="flag-icon"> Indonesia
+                    </li>
+                    <li data-lang="en">
+                        <img src="img/inggris.png" alt="English" class="flag-icon"> English
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+    </div>
+</header>
 
     <section id="home" class="hero section" data-aos="fade-down" data-aos-delay="100">
         <div class="container">
             <div class="hero-wrapper">
                 <div class="hero-content">
-                    <h1 class="hero-title">DESAIN <span>KREATIF</span></h1>
-                    <p class="hero-description">Temukan strategi inovatif untuk komunikasi visual yang berdampak. Kami mengubah ide menjadi kenyataan yang menarik, memastikan merek Anda menonjol di pasar yang ramai.</p>
+                    <h1 class="hero-title" data-i18n="hero-title">DESAIN <span>KREATIF</span></h1>
+                    <p class="hero-description" data-i18n="hero-description">Temukan strategi inovatif untuk komunikasi visual yang berdampak. Kami mengubah ide menjadi kenyataan yang menarik, memastikan merek Anda menonjol di pasar yang ramai.</p>
                     <div class="hero-buttons">
                         <a href="#services" class="btn btn-primary">
-                            <span>JELAJAHI LAYANAN</span>
+                            <span data-i18n="hero-explore-services">JELAJAHI LAYANAN</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                         <a href="#contact" class="btn btn-secondary">
-                            <span>HUBUNGI SAYA</span>
+                            <span data-i18n="hero-contact-me">HUBUNGI SAYA</span>
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="image-wrapper">
-                        <img src="img/abstract-1.webp" alt="Editor saat bekerja" class="hero-img">
+                        <img src="img/logo.png" alt="Editor saat bekerja" class="hero-img">
                     </div>
                 </div>
             </div>
@@ -65,17 +106,17 @@
             <div class="about-content">
                 <div class="about-text">
                     <div class="section-header">
-                        <h2>Erry Sandy</h2>
-                        <p>CEO Of rtsprojects</p>
+                        <h2 data-i18n="about-name">Erry Sandy</h2>
+                        <p data-i18n="about-title">CEO Of rtsprojects</p>
                     </div>
                     <div class="about-bio">
-                        <p>Saya mengubah cuplikan biasa menjadi karya sinematik. Dengan latar belakang teori film dan pengalaman lebih dari 7 tahun dalam pascaproduksi, saya menghadirkan presisi teknis dan visi artistik dalam setiap proyek.</p>
+                        <p data-i18n="about-bio">Saya mengubah cuplikan biasa menjadi karya sinematik. Dengan latar belakang teori film dan pengalaman lebih dari 7 tahun dalam pascaproduksi, saya menghadirkan presisi teknis dan visi artistik dalam setiap proyek.</p>
                         <ul class="highlight-list">
-                            <li><i class="fas fa-check-circle"></i> Ahli Adobe Premiere Pro, After Effects, dan DaVinci Resolve</li>
-                            <li><i class="fas fa-check-circle"></i> Arah kreatif & penceritaan visual</li>
-                            <li><i class="fas fa-check-circle"></i> Pengoperasian kamera untuk dokumenter & film pendek</li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="about-skill-1">Ahli Adobe Premiere Pro, After Effects, dan DaVinci Resolve</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="about-skill-2">Arah kreatif & penceritaan visual</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-i18n="about-skill-3">Pengoperasian kamera untuk dokumenter & film pendek</span></li>
                         </ul>
-                        <a href="#services" class="service-link">Lihat Layanan</a>
+                        <a href="#services" class="service-link" data-i18n="about-service-link">Lihat Layanan</a>
                     </div>
                 </div>
                 <div class="about-visual">
@@ -83,19 +124,19 @@
                         <img src="img/profile-cutout.png" alt="Profil Saya" class="profile-cutout">
                         <div class="floating-element tools">
                             <i class="fas fa-video"></i>
-                            <span>Alat Editing</span>
+                            <span data-i18n="about-tools">Alat Editing</span>
                         </div>
                         <div class="floating-element clients">
                             <i class="fas fa-user-tie"></i>
-                            <span>150+ Klien</span>
+                            <span data-i18n="about-clients">150+ Klien</span>
                         </div>
                     </div>
                     <div class="experience-card">
                         <div class="card-content">
                             <span class="number">7+</span>
-                            <span class="label">Tahun Pengalaman</span>
+                            <span class="label" data-i18n="about-experience">Tahun Pengalaman</span>
                             <div class="divider"></div>
-                            <p>Bekerja sama dengan merek dan agensi global</p>
+                            <p data-i18n="about-experience-desc">Bekerja sama dengan merek dan agensi global</p>
                         </div>
                     </div>
                 </div>
@@ -106,127 +147,176 @@
     <section id="services" class="services section" data-aos="zoom-in" data-aos-delay="100">
         <div class="container">
             <div class="section-header" data-aos="fade-up" data-aos-delay="200">
-                <h2>Layanan <span>Kami</span></h2>
-                <p>Solusi profesional sesuai kebutuhan kreatif Anda</p>
+                <h2 data-i18n="services-title">Layanan <span>Kami</span></h2>
+                <p data-i18n="services-description">Solusi profesional sesuai kebutuhan kreatif Anda</p>
             </div>
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-icon"><i class="fas fa-film"></i></div>
-                    <h3>Video Editor</h3>
-                    <p>Editing video profesional untuk konten sinematik, promosi, dan media sosial dengan color grading tingkat lanjut.</p>
+                    <h3 data-i18n="service-video-editor-title">Video Editor</h3>
+                    <p data-i18n="service-video-editor-desc">Editing video profesional untuk konten sinematik, promosi, dan media sosial dengan color grading tingkat lanjut.</p>
                     <div class="service-features">
-                        <span>Editing Sinematik</span>
-                        <span>Grafis Bergerak</span>
-                        <span>Color Grading</span>
+                        <span data-i18n="service-video-editor-feature-1">Editing Sinematik</span>
+                        <span data-i18n="service-video-editor-feature-2">Grafis Bergerak</span>
+                        <span data-i18n="service-video-editor-feature-3">Color Grading</span>
                     </div>
-                    <a href="services.html?id=video-editor" class="service-link">Detail Layanan<i class="fas fa-arrow-right"></i></a>
+                    <a href="services.html?id=video-editor" class="service-link" data-i18n="service-link">Detail Layanan<i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-                    <h3>Visual Artist</h3>
-                    <p>Ilustrasi digital, manipulasi foto, dan desain grafis untuk branding dan proyek pribadi.</p>
+                    <h3 data-i18n="service-visual-artist-title">Visual Artist</h3>
+                    <p data-i18n="service-visual-artist-desc">Ilustrasi digital, manipulasi foto, dan desain grafis untuk branding dan proyek pribadi.</p>
                     <div class="service-features">
-                        <span>Ilustrasi Digital</span>
-                        <span>Manipulasi Foto</span>
-                        <span>Desain Grafis</span>
+                        <span data-i18n="service-visual-artist-feature-1">Ilustrasi Digital</span>
+                        <span data-i18n="service-visual-artist-feature-2">Manipulasi Foto</span>
+                        <span data-i18n="service-visual-artist-feature-3">Desain Grafis</span>
                     </div>
-                    <a href="services.html?id=visual-artist" class="service-link">Detail Layanan <i class="fas fa-arrow-right"></i></a>
+                    <a href="services.html?id=visual-artist" class="service-link" data-i18n="service-link">Detail Layanan <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
-                    <h3>Visual Jockey</h3>
-                    <p>Performa visual langsung untuk acara, konser, dan klub dengan animasi serta efek real-time.</p>
+                    <h3 data-i18n="service-visual-jockey-title">Visual Jockey</h3>
+                    <p data-i18n="service-visual-jockey-desc">Performa visual langsung untuk acara, konser, dan klub dengan animasi serta efek real-time.</p>
                     <div class="service-features">
-                        <span>Mixer Visual Langsung</span>
-                        <span>Animasi Real-time</span>
-                        <span>Pengaturan Visual Acara</span>
+                        <span data-i18n="service-visual-jockey-feature-1">Mixer Visual Langsung</span>
+                        <span data-i18n="service-visual-jockey-feature-2">Animasi Real-time</span>
+                        <span data-i18n="service-visual-jockey-feature-3">Pengaturan Visual Acara</span>
                     </div>
-                    <a href="services.html?id=visual-jockey" class="service-link">Detail Layanan <i class="fas fa-arrow-right"></i></a>
+                    <a href="services.html?id=visual-jockey" class="service-link" data-i18n="service-link">Detail Layanan <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="service-icon"><i class="fas fa-robot"></i></div>
-                    <h3>AI Content</h3>
-                    <p>Pembuatan konten berbasis AI termasuk teks, gambar, dan peningkatan video otomatis.</p>
+                    <h3 data-i18n="service-ai-content-title">AI Content</h3>
+                    <p data-i18n="service-ai-content-desc">Pembuatan konten berbasis AI termasuk teks, gambar, dan peningkatan video otomatis.</p>
                     <div class="service-features">
-                        <span>Generasi Teks AI</span>
-                        <span>Pembuatan Gambar AI</span>
-                        <span>Peningkatan Video AI</span>
+                        <span data-i18n="service-ai-content-feature-1">Generasi Teks AI</span>
+                        <span data-i18n="service-ai-content-feature-2">Pembuatan Gambar AI</span>
+                        <span data-i18n="service-ai-content-feature-3">Peningkatan Video AI</span>
                     </div>
-                    <a href="services.html?id=ai-content" class="service-link">Detail Layanan <i class="fas fa-arrow-right"></i></a>
+                    <a href="services.html?id=ai-content" class="service-link" data-i18n="service-link">Detail Layanan <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Clients Section -->
 <section id="clients" class="clients-section" data-aos="fade-left" data-aos-delay="100">
-  <div class="container">
-    <div class="section-header">
-      <h2>Dipercaya <span>Oleh</span></h2>
-      <p>Beberapa merek dan agensi yang percaya pada kami</p>
+    <div class="container">
+        <div class="section-header">
+            <h2 data-i18n="clients-title">Dipercaya <span>Oleh</span></h2>
+            <p data-i18n="clients-description">Beberapa merek dan agensi yang percaya pada kami</p>
+        </div>
+        <div class="clients-grid">
+            <div class="client-card" style="--i: 1;">
+                <div class="client-logo">
+                    <img src="img/ahha.png" alt="AHHA Logo" data-modal-img="img/ahha.png" data-modal-desc="Video Editor AH Corp & Viral Management" data-modal-projects='{
+                        "Youtube Channel": [
+                        "Atta Halilintar",
+"Aurel Hermansyah",
+"AH Podcast",
+"Thoriq Halilintar",
+"Fahmi Nur Muhammad",
+"Katak Bizer",
+"Xposur Media",
+"Axel Matthew"
+]
+                    }' class="client-img">
+                </div>
+            </div>
+            <div class="client-card" style="--i: 2;">
+                <div class="client-logo">
+                    <img src="img/nle.png" alt="New Live Entertainment Logo" data-modal-img="img/nle.png" data-modal-desc="New Live Entertainment - Collaborating for impactful visual solutions." data-modal-projects='{
+                        "Content Edited": [
+                            "Visual LED: Sameday Editing, Overture, Special Treatment, Credit Title, Sponsor Promotions",
+                            "Social Media Promotion",
+                            "Visual Booth / Gate in Venue Event",
+                            "Youtube Official New Live Entertainment: After Movie, Recap, BTS, Special Content"
+                        ],
+                        "Events": [
+                            "36th Anniversary Special Concert of Kahitna",
+                            "60th Journey of TVRI",
+                            "Wattr World (Netherlands)",
+                            "Birukan Langit Indonesia Festival",
+                            "Noah DekadeXperience",
+                            "JISPHORIA",
+                            "Pengabdi Pesta vol.2",
+                            "YPI Press Conference Ms.Cindy May Mc Guire",
+                            "25th SNJ First Viewing Circus Concerto",
+                            "Jakarta Concert Week",
+                            "Yovie Widianto Billion Songs Concert",
+                            "New Live Show",
+                            "50th HUT KNPI",
+                            "Circus Concerto feat Noah",
+                            "Circus Concerto feat BCL",
+                            "Pengabdi Pesta Vol.3",
+                            "26th AMI AWARDS"
+                        ]
+                    }' class="client-img">
+                </div>
+            </div>
+            <div class="client-card" style="--i: 3;">
+                <div class="client-logo">
+                    <img src="img/yamaha.png" alt="Yamaha Logo" data-modal-img="img/yamaha.png" data-modal-desc="Yamaha - Empowering brands with cinematic visuals." data-modal-projects='{
+                         "Content Edited": [
+                            "Visual LED: Sameday Editing, Overture, Special Treatment, Credit Title, Sponsor Promotions",
+                            "Social Media Promotion",
+                            "Visual Booth / Gate in Venue Event",
+                            "Youtube Official New Live Entertainment: After Movie, Recap, BTS, Special Content"
+                        ],
+                        "Events": [
+                            "36th Anniversary Special Concert of Kahitna",
+                            "60th Journey of TVRI",
+                            "Wattr World (Netherlands)",
+                            "Birukan Langit Indonesia Festival",
+                            "Noah DekadeXperience",
+                            "JISPHORIA",
+                            "Pengabdi Pesta vol.2",
+                            "YPI Press Conference Ms.Cindy May Mc Guire",
+                            "25th SNJ First Viewing Circus Concerto",
+                            "Jakarta Concert Week",
+                            "Yovie Widianto Billion Songs Concert",
+                            "New Live Show",
+                            "50th HUT KNPI",
+                            "Circus Concerto feat Noah",
+                            "Circus Concerto feat BCL",
+                            "Pengabdi Pesta Vol.3",
+                            "26th AMI AWARDS"
+                        ]
+                    }' class="client-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Structure -->
+        <div class="client-modal" id="clientModal" role="dialog" aria-labelledby="clientModalTitle" aria-hidden="true">
+            <div class="client-modal-content">
+                <span class="client-modal-close" role="button" aria-label="Close modal">×</span>
+                <h3 class="client-modal-title"></h3>
+                <img src="" alt="Client Image" class="client-modal-img">
+                <p class="client-modal-desc"></p>
+                <div class="client-modal-projects">
+                    <h4>Projects</h4>
+                    <div class="projects-content"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <div class="clients-grid">
-      <div class="client-card" style="--i: 1;">
-        <div class="client-logo">
-          <img src="img/ahha.png" alt="Client Logo">
-        </div>
-      
-      </div>
-      
-      <div class="client-card" style="--i: 2;">
-        <div class="client-logo">
-          <img src="img/nle.png" alt="Client Logo">
-        </div>
-       
-      </div>
-      
-      <div class="client-card" style="--i: 3;">
-        <div class="client-logo">
-          <img src="img/yamaha.png" alt="Client Logo">
-        </div>
-        
-      </div>
-      
-      <!-- <div class="client-card" style="--i: 4;">
-        <div class="client-logo">
-          <img src="https://via.placeholder.com/200x100/8A2BE2/FFFFFF?text=Brand+4" alt="Client Logo">
-        </div>
-        
-      </div>
-      
-      <div class="client-card" style="--i: 5;">
-        <div class="client-logo">
-          <img src="https://via.placeholder.com/200x100/8A2BE2/FFFFFF?text=Brand+5" alt="Client Logo">
-        </div>
-        
-      </div>
-      
-      <div class="client-card" style="--i: 6;">
-        <div class="client-logo">
-          <img src="https://via.placeholder.com/200x100/8A2BE2/FFFFFF?text=Brand+6" alt="Client Logo">
-        </div> -->
-        
-      </div>
-    </div>
-  </div>
 </section>
 
     <section id="call-to-action" class="call-to-action section" data-aos="fade-right" data-aos-delay="100">
         <div class="container">
             <div class="advertise-1 d-flex flex-column flex-lg-row gap-4 align-items-center position-relative">
                 <div class="content-left flex-grow-1">
-                    <span class="badge text-uppercase mb-2">Penawaran Khusus!</span>
-                    <h2>Tingkatkan Cerita Visual Anda Hari Ini</h2>
-                    <p class="my-4">Maksimalkan potensi konten Anda dengan editing profesional, narasi kuat, dan hasil sinematik. Biarkan kami mengubah cuplikan mentah Anda menjadi visual memukau yang menginspirasi.</p>
+                    <span class="badge text-uppercase mb-2" data-i18n="cta-badge">Penawaran Khusus!</span>
+                    <h2 data-i18n="cta-title">Tingkatkan Cerita Visual Anda Hari Ini</h2>
+                    <p class="my-4" data-i18n="cta-description">Maksimalkan potensi konten Anda dengan editing profesional, narasi kuat, dan hasil sinematik. Biarkan kami mengubah cuplikan mentah Anda menjadi visual memukau yang menginspirasi.</p>
                     <div class="features d-flex flex-wrap gap-3 mb-4">
-                        <div class="feature-item"><i class="bi bi-check-circle-fill"></i><span>Editing Sinematik</span></div>
-                        <div class="feature-item"><i class="bi bi-check-circle-fill"></i><span>Visual Kreatif</span></div>
-                        <div class="feature-item"><i class="bi bi-check-circle-fill"></i><span>Proses Cepat</span></div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i><span data-i18n="cta-feature-1">Editing Sinematik</span></div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i><span data-i18n="cta-feature-2">Visual Kreatif</span></div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i><span data-i18n="cta-feature-3">Proses Cepat</span></div>
                     </div>
                     <div class="cta-buttons d-flex flex-wrap gap-3">
-                        <a href="#contact" class="btn btn-primary">Mulai Proyek Anda</a>
-                        <a href="#services" class="btn btn-outline">Lihat Layanan</a>
+                        <a href="#contact" class="btn btn-primary" data-i18n="cta-start-project">Mulai Proyek Anda</a>
+                        <a href="#services" class="btn btn-outline" data-i18n="cta-see-services">Lihat Layanan</a>
                     </div>
                 </div>
                 <div class="decoration">
@@ -237,19 +327,17 @@
         </div>
     </section>
 
-    <section id="contact" class="contact-section"  data-aos="flip-up" data-aos-delay="100">
+    <section id="contact" class="contact-section" data-aos="flip-up" data-aos-delay="100">
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info" style="margin:0 auto; text-align:center;">
                     <div class="section-header">
-                        <h2>Hubungi <span>Kami</span></h2>
-                        <p>Mari buat sesuatu yang luar biasa bersama</p>
+                        <h2 data-i18n="contact-title">Hubungi <span>Kami</span></h2>
+                        <p data-i18n="contact-description">Mari buat sesuatu yang luar biasa bersama</p>
                     </div>
-                    <p>Untuk konsultasi atau pemesanan jasa editing, silakan langsung klik tombol WhatsApp di bawah ini.</p>
-                    <a href="https://wa.me/+6285716317441" target="_blank" class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
-                    </a>
-                    <p>Atau hubungi kami melalui</p>
+                    <p data-i18n="contact-text">Untuk konsultasi atau pemesanan jasa editing, silakan langsung klik tombol WhatsApp di bawah ini.</p>
+                    <a href="https://wa.me/+6285716317441" target="_blank" class="btn btn-whatsapp" data-i18n="contact-whatsapp">Hubungi via WhatsApp <i class="fab fa-whatsapp"></i></a>
+                    <p data-i18n="contact-alt">Atau hubungi kami melalui</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
@@ -266,59 +354,52 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="logo">VISION<span>STUDIO</span></div>
-                    <p>Layanan editing foto dan video profesional untuk mewujudkan visi kreatif Anda dengan penceritaan visual yang memukau.</p>
+                    <p data-i18n="footer-about">Layanan editing foto dan video profesional untuk mewujudkan visi kreatif Anda dengan penceritaan visual yang memukau.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Tautan Cepat</h4>
+                    <h4 data-i18n="footer-links-title">Tautan Cepat</h4>
                     <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#services">Layanan</a></li>
-                        <li><a href="#about">Tentang</a></li>
-                        <li><a href="#contact">Kontak</a></li>
+                        <li><a href="#home" data-i18n="nav-home">Beranda</a></li>
+                        <li><a href="#services" data-i18n="nav-services">Layanan</a></li>
+                        <li><a href="#about" data-i18n="nav-about">Tentang</a></li>
+                        <li><a href="#contact" data-i18n="nav-contact">Kontak</a></li>
                     </ul>
                 </div>
                 <div class="footer-services">
-                    <h4>Layanan</h4>
+                    <h4 data-i18n="footer-services-title">Layanan</h4>
                     <ul>
-                        <li><a href="services.html?id=visual-editor">Editor Video</a></li>
-                        <li><a href="services.html?id=visual-artist">Seniman Visual</a></li>
-                        <li><a href="services.html?id=visual-jockey">Visual Jockey</a></li>
-                        <li><a href="services.html?id=ai-content">Konten AI</a></li>
+                        <li><a href="services.html?id=video-editor" data-i18n="footer-service-video-editor">Editor Video</a></li>
+                        <li><a href="services.html?id=visual-artist" data-i18n="footer-service-visual-artist">Seniman Visual</a></li>
+                        <li><a href="services.html?id=visual-jockey" data-i18n="footer-service-visual-jockey">Visual Jockey</a></li>
+                        <li><a href="services.html?id=ai-content" data-i18n="footer-service-ai-content">Konten AI</a></li>
                     </ul>
                 </div>
                 <div class="footer-newsletter">
-                    <h4>Buletin</h4>
-                    <p>Berlangganan untuk tips editing dan penawaran khusus</p>
+                    <h4 data-i18n="footer-newsletter-title">Buletin</h4>
+                    <p data-i18n="footer-newsletter-desc">Berlangganan untuk tips editing dan penawaran khusus</p>
                     <form>
-                        <input type="email" placeholder="Email Anda">
+                        <input type="email" placeholder="Email Anda" data-i18n-placeholder="footer-newsletter-placeholder">
                         <button type="submit"><i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 rtsprojects. Seluruh hak cipta dilindungi.</p>
+                <p data-i18n="footer-copyright">© 2025 rtsprojects. Seluruh hak cipta dilindungi.</p>
                 <div class="legal-links">
-                    <a href="#">Kebijakan Privasi</a>
-                    <a href="#">Syarat & Ketentuan</a>
+                    <a href="#" data-i18n="footer-privacy">Kebijakan Privasi</a>
+                    <a href="#" data-i18n="footer-terms">Syarat & Ketentuan</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <a href="#" class="scroll-top"><i class="fas fa-arrow-up"></i></a>
-    <script src="assets/js/script.js"></script>
+
+    <div class="mobile-nav-toggle" id="mobile-nav-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
-    once: true,
-    mirror: false
-  });
-  
-</script>
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="ugUpaiUHpGZOG06u9vQZg";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

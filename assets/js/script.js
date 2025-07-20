@@ -9,674 +9,658 @@
 (function() {
   "use strict";
 
-  /**
-   * Apply .scrolled class to the body as the page is scrolled down
-   */
-  function toggleScrolled() {
-    const selectBody = document.querySelector('body');
-    const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
-  }
-
-  document.addEventListener('scroll', toggleScrolled);
-  window.addEventListener('load', toggleScrolled);
-
-  /**
-   * Mobile nav toggle
-   */
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-
-  function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
-  }
-  if (mobileNavToggleBtn) {
-    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
-  }
-
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
-      }
-    });
-
-  });
-
-  /**
-   * Toggle mobile nav dropdowns
-   */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopImmediatePropagation();
-    });
-  });
-
-  /**
-   * Preloader
-   */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
-  }
-
-  /**
-   * Scroll top button
-   */
-  let scrollTop = document.querySelector('.scroll-top');
-
-  function toggleScrollTop() {
-    if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-    }
-  }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-
-  window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop);
-
-  /**
-   * Animation on scroll function and init
-   */
-  function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
-  }
-  window.addEventListener('load', aosInit);
-
-  /**
-   * Init swiper sliders
-   */
-  function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
-
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
-      }
-    });
-  }
-
-  window.addEventListener("load", initSwiper);
-
-  /**
-   * Initiate glightbox
-   */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
-
-  /**
-   * Init isotope layout and filters
-   */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
-
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
-    });
-
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        if (typeof aosInit === 'function') {
-          aosInit();
-        }
-      }, false);
-    });
-
-  });
-
-  /**
-   * Frequently Asked Questions Toggle
-   */
-  document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle, .faq-item .faq-header').forEach((faqItem) => {
-    faqItem.addEventListener('click', () => {
-      faqItem.parentNode.classList.toggle('faq-active');
-    });
-  });
-
-  /**
-   * Correct scrolling position upon page load for URLs containing hash links.
-   */
-  window.addEventListener('load', function(e) {
-    if (window.location.hash) {
-      if (document.querySelector(window.location.hash)) {
-        setTimeout(() => {
-          let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
-          window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
-            behavior: 'smooth'
-          });
-        }, 100);
-      }
-    }
-  });
-
-  /**
-   * Navmenu Scrollspy
-   */
-  let navmenulinks = document.querySelectorAll('.navmenu a');
-
-  function navmenuScrollspy() {
-    navmenulinks.forEach(navmenulink => {
-      if (!navmenulink.hash) return;
-      let section = document.querySelector(navmenulink.hash);
-      if (!section) return;
-      let position = window.scrollY + 200;
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
-        navmenulink.classList.add('active');
-      } else {
-        navmenulink.classList.remove('active');
-      }
-    })
-  }
-
  
-    /**
-   * Projects Page Filtering
-   */
-  function initProjectsFilter() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', function() {
-        // Remove active class from all buttons in this control group
-        this.parentNode.querySelectorAll('.filter-btn').forEach(b => {
-          b.classList.remove('active');
-        });
-        
-        // Add active class to clicked button
-        this.classList.add('active');
-        
-        // Here you would typically filter the projects
-        // For this demo, we're just changing the button state
-      });
-    });
-  }
 
-  /**
-   * Initialize Projects Page
-   */
-  function initProjectsPage() {
-    if (document.querySelector('.projects-container')) {
-      initProjectsFilter();
-      
-      // Initialize any other projects page specific functionality
-    }
-  }
+const translations = {
+        id: {
+            title: "rtsprojects | Editor Profesional",
+            "nav-home": "Beranda",
+            "nav-services": "Layanan",
+            "nav-about": "Tentang",
+            "nav-clients": "Klien",
+            "nav-contact": "Kontak",
+            "nav-portfolio": "Portofolio",
+            "hero-title": "DESAIN <span>KREATIF</span>",
+            "hero-description": "Temukan strategi inovatif untuk komunikasi visual yang berdampak. Kami mengubah ide menjadi kenyataan yang menarik, memastikan merek Anda menonjol di pasar yang ramai.",
+            "hero-explore-services": "JELAJAHI LAYANAN",
+            "hero-contact-me": "HUBUNGI SAYA",
+            "about-name": "Erry Sandy",
+            "about-title": "CEO Of rtsprojects",
+            "about-bio": "Saya mengubah cuplikan biasa menjadi karya sinematik. Dengan latar belakang teori film dan pengalaman lebih dari 7 tahun dalam pascaproduksi, saya menghadirkan presisi teknis dan visi artistik dalam setiap proyek.",
+            "about-skill-1": "Ahli Adobe Premiere Pro, After Effects, dan DaVinci Resolve",
+            "about-skill-2": "Arah kreatif & penceritaan visual",
+            "about-skill-3": "Pengoperasian kamera untuk dokumenter & film pendek",
+            "about-service-link": "Lihat Layanan",
+            "about-tools": "Alat Editing",
+            "about-clients": "150+ Klien",
+            "about-experience": "Tahun Pengalaman",
+            "about-experience-desc": "Bekerja sama dengan merek dan agensi global",
+            "services-title": "Layanan <span>Kami</span>",
+            "services-description": "Solusi profesional sesuai kebutuhan kreatif Anda",
+            "service-video-editor-title": "Video Editor",
+            "service-video-editor-desc": "Editing video profesional untuk konten sinematik, promosi, dan media sosial dengan color grading tingkat lanjut.",
+            "service-video-editor-feature-1": "Editing Sinematik",
+            "service-video-editor-feature-2": "Grafis Bergerak",
+            "service-video-editor-feature-3": "Color Grading",
+            "service-visual-artist-title": "Visual Artist",
+            "service-visual-artist-desc": "Ilustrasi digital, manipulasi foto, dan desain grafis untuk branding dan proyek pribadi.",
+            "service-visual-artist-feature-1": "Ilustrasi Digital",
+            "service-visual-artist-feature-2": "Manipulasi Foto",
+            "service-visual-artist-feature-3": "Desain Grafis",
+            "service-visual-jockey-title": "Visual Jockey",
+            "service-visual-jockey-desc": "Performa visual langsung untuk acara, konser, dan klub dengan animasi serta efek real-time.",
+            "service-visual-jockey-feature-1": "Mixer Visual Langsung",
+            "service-visual-jockey-feature-2": "Animasi Real-time",
+            "service-visual-jockey-feature-3": "Pengaturan Visual Acara",
+            "service-ai-content-title": "AI Content",
+            "service-ai-content-desc": "Pembuatan konten berbasis AI termasuk teks, gambar, dan peningkatan video otomatis.",
+            "service-ai-content-feature-1": "Generasi Teks AI",
+            "service-ai-content-feature-2": "Pembuatan Gambar AI",
+            "service-ai-content-feature-3": "Peningkatan Video AI",
+            "service-link": "Detail Layanan",
+            "clients-title": "Dipercaya <span>Oleh</span>",
+            "clients-description": "Beberapa merek dan agensi yang percaya pada kami",
+            "cta-badge": "Penawaran Khusus!",
+            "cta-title": "Tingkatkan Cerita Visual Anda Hari Ini",
+            "cta-description": "Maksimalkan potensi konten Anda dengan editing profesional, narasi kuat, dan hasil sinematik. Biarkan kami mengubah cuplikan mentah Anda menjadi visual memukau yang menginspirasi.",
+            "cta-feature-1": "Editing Sinematik",
+            "cta-feature-2": "Visual Kreatif",
+            "cta-feature-3": "Proses Cepat",
+            "cta-start-project": "Mulai Proyek Anda",
+            "cta-see-services": "Lihat Layanan",
+            "contact-title": "Hubungi <span>Kami</span>",
+            "contact-description": "Mari buat sesuatu yang luar biasa bersama",
+            "contact-text": "Untuk konsultasi atau pemesanan jasa editing, silakan langsung klik tombol WhatsApp di bawah ini.",
+            "contact-whatsapp": "Hubungi via WhatsApp",
+            "contact-alt": "Atau hubungi kami melalui",
+            "footer-about": "Layanan editing foto dan video profesional untuk mewujudkan visi kreatif Anda dengan penceritaan visual yang memukau.",
+            "footer-links-title": "Tautan Cepat",
+            "footer-services-title": "Layanan",
+            "footer-service-video-editor": "Editor Video",
+            "footer-service-visual-artist": "Seniman Visual",
+            "footer-service-visual-jockey": "Visual Jockey",
+            "footer-service-ai-content": "Konten AI",
+            "footer-newsletter-title": "Buletin",
+            "footer-newsletter-desc": "Berlangganan untuk tips editing dan penawaran khusus",
+            "footer-newsletter-placeholder": "Email Anda",
+            "footer-copyright": "© 2025 rtsprojects. Seluruh hak cipta dilindungi.",
+            "footer-privacy": "Kebijakan Privasi",
+            "footer-terms": "Syarat & Ketentuan"
+        },
+        en: {
+            title: "rtsprojects | Professional Editor",
+            "nav-home": "Home",
+            "nav-services": "Services",
+            "nav-about": "About",
+            "nav-clients": "Clients",
+            "nav-contact": "Contact",
+            "nav-portfolio": "Portfolio",
+            "hero-title": "CREATIVE <span>DESIGN</span>",
+            "hero-description": "Discover innovative strategies for impactful visual communication. We transform ideas into captivating realities, ensuring your brand stands out in a crowded market.",
+            "hero-explore-services": "EXPLORE SERVICES",
+            "hero-contact-me": "CONTACT ME",
+            "about-name": "Erry Sandy",
+            "about-title": "CEO Of rtsprojects",
+            "about-bio": "I transform ordinary footage into cinematic masterpieces. With a background in film theory and over 7 years of post-production experience, I bring technical precision and artistic vision to every project.",
+            "about-skill-1": "Expert in Adobe Premiere Pro, After Effects, and DaVinci Resolve",
+            "about-skill-2": "Creative direction & visual storytelling",
+            "about-skill-3": "Camera operation for documentaries & short films",
+            "about-service-link": "View Services",
+            "about-tools": "Editing Tools",
+            "about-clients": "150+ Clients",
+            "about-experience": "Years of Experience",
+            "about-experience-desc": "Collaborating with global brands and agencies",
+            "services-title": "Our <span>Services</span>",
+            "services-description": "Professional solutions tailored to your creative needs",
+            "service-video-editor-title": "Video Editor",
+            "service-video-editor-desc": "Professional video editing for cinematic content, promotions, and social media with advanced color grading.",
+            "service-video-editor-feature-1": "Cinematic Editing",
+            "service-video-editor-feature-2": "Motion Graphics",
+            "service-video-editor-feature-3": "Color Grading",
+            "service-visual-artist-title": "Visual Artist",
+            "service-visual-artist-desc": "Digital illustrations, photo manipulation, and graphic design for branding and personal projects.",
+            "service-visual-artist-feature-1": "Digital Illustration",
+            "service-visual-artist-feature-2": "Photo Manipulation",
+            "service-visual-artist-feature-3": "Graphic Design",
+            "service-visual-jockey-title": "Visual Jockey",
+            "service-visual-jockey-desc": "Live visual performances for events, concerts, and clubs with real-time animations and effects.",
+            "service-visual-jockey-feature-1": "Live Visual Mixer",
+            "service-visual-jockey-feature-2": "Real-time Animation",
+            "service-visual-jockey-feature-3": "Event Visual Setup",
+            "service-ai-content-title": "AI Content",
+            "service-ai-content-desc": "AI-based content creation including text, images, and automated video enhancements.",
+            "service-ai-content-feature-1": "AI Text Generation",
+            "service-ai-content-feature-2": "AI Image Creation",
+            "service-ai-content-feature-3": "AI Video Enhancement",
+            "service-link": "Service Details",
+            "clients-title": "Trusted <span>By</span>",
+            "clients-description": "Some brands and agencies that trust us",
+            "cta-badge": "Special Offer!",
+            "cta-title": "Elevate Your Visual Story Today",
+            "cta-description": "Maximize your content’s potential with professional editing, powerful narratives, and cinematic results. Let us transform your raw footage into stunning visuals that inspire.",
+            "cta-feature-1": "Cinematic Editing",
+            "cta-feature-2": "Creative Visuals",
+            "cta-feature-3": "Fast Process",
+            "cta-start-project": "Start Your Project",
+            "cta-see-services": "View Services",
+            "contact-title": "Contact <span>Us</span>",
+            "contact-description": "Let’s create something extraordinary together",
+            "contact-text": "For consultations or booking editing services, please click the WhatsApp button below.",
+            "contact-whatsapp": "Contact via WhatsApp",
+            "contact-alt": "Or reach us through",
+            "footer-about": "Professional photo and video editing services to bring your creative vision to life with captivating visual storytelling.",
+            "footer-links-title": "Quick Links",
+            "footer-services-title": "Services",
+            "footer-service-video-editor": "Video Editor",
+            "footer-service-visual-artist": "Visual Artist",
+            "footer-service-visual-jockey": "Visual Jockey",
+            "footer-service-ai-content": "AI Content",
+            "footer-newsletter-title": "Newsletter",
+            "footer-newsletter-desc": "Subscribe for editing tips and special offers",
+            "footer-newsletter-placeholder": "Your Email",
+            "footer-copyright": "© 2025 rtsprojects. All rights reserved.",
+            "footer-privacy": "Privacy Policy",
+            "footer-terms": "Terms & Conditions"
+        }
+    };
 
-  // Initialize everything when the DOM is loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    initProjectsPage();
-  });
 
-  /**
- * Improved Mobile Navigation
+/**
+ * Toggle language dropdown visibility (Desktop)
  */
-function initMobileNav() {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('.navmenu ul');
-  const navLinks = document.querySelectorAll('.navmenu a');
-  
-  // Toggle mobile menu
-  menuToggle.addEventListener('click', function() {
-    this.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    document.body.classList.toggle('no-scroll');
-  });
-  
-  // Close menu when clicking a link
-  navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      if (window.innerWidth <= 992) {
-        menuToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-        document.body.classList.remove('no-scroll');
-      }
-    });
-  });
-  
-  // Close menu when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-      menuToggle.classList.remove('active');
-      navMenu.classList.remove('active');
-      document.body.classList.remove('no-scroll');
+function toggleLanguageDropdown(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById('language-options');
+    if (dropdown) {
+        dropdown.classList.toggle('active');
+        console.log('Desktop dropdown toggled, active:', dropdown.classList.contains('active'));
+    } else {
+        console.error('Desktop dropdown (#language-options) not found');
     }
-  });
-  
-  // Handle window resize
-  window.addEventListener('resize', function() {
-    if (window.innerWidth > 992) {
-      menuToggle.classList.remove('active');
-      navMenu.classList.remove('active');
-      document.body.classList.remove('no-scroll');
-    }
-  });
 }
 
 /**
- * Active Link Highlighting
+ * Toggle language dropdown visibility (Mobile)
  */
-function setActiveLink() {
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('.navmenu a');
-  
-  window.addEventListener('scroll', function() {
-    let current = '';
-    
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      
-      if (pageYOffset >= (sectionTop - 100)) {
-        current = section.getAttribute('id');
-      }
-    });
-    
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').includes(current)) {
-        link.classList.add('active');
-      }
-    });
-  });
+function toggleLanguageDropdownMobile(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById('language-options-mobile');
+    if (dropdown) {
+        dropdown.classList.toggle('active');
+        console.log('Mobile dropdown toggled, active:', dropdown.classList.contains('active')); // Debugging
+    } else {
+        console.error('Mobile dropdown (#language-options-mobile) not found');
+    }
 }
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  initMobileNav();
-  setActiveLink();
-});
-
-// Animasi untuk floating elements
-function initAboutAnimations() {
-  const profileContainer = document.querySelector('.profile-container');
-  
-  if (profileContainer) {
-    // Parallax effect on mouse move
-    document.addEventListener('mousemove', (e) => {
-      const x = (window.innerWidth / 2 - e.pageX) / 20;
-      const y = (window.innerHeight / 2 - e.pageY) / 20;
-      profileContainer.style.transform = `translate(${x}px, ${y}px)`;
-    });
-  }
-}
-
-document.addEventListener('DOMContentLoaded', initAboutAnimations);
-
-// Testimonial Slider Functionality
-// Custom Scrollbar Functionality
-function initTestimonialScrollbar() {
-  const track = document.querySelector('.testimonial-track');
-  const thumb = document.querySelector('.scrollbar-thumb');
-  const scrollTrack = document.querySelector('.scrollbar-track');
-  if (!track || !thumb || !scrollTrack) return;
-
-  // Update thumb position on scroll
-  function updateThumb() {
-    const scrollWidth = track.scrollWidth - track.clientWidth;
-    const scrollLeft = track.scrollLeft;
-    const thumbWidth = Math.max(track.clientWidth / track.scrollWidth * scrollTrack.offsetWidth, 40);
-    const maxThumbMove = scrollTrack.offsetWidth - thumbWidth;
-    const thumbLeft = scrollWidth ? (scrollLeft / scrollWidth) * maxThumbMove : 0;
-    thumb.style.width = thumbWidth + 'px';
-    thumb.style.left = thumbLeft + 'px';
-  }
-  track.addEventListener('scroll', updateThumb);
-  window.addEventListener('resize', updateThumb);
-  updateThumb();
-
-  // Drag scrollbar
-  let isDragging = false;
-  let startX, startScrollLeft;
-  thumb.addEventListener('mousedown', function(e) {
-    isDragging = true;
-    startX = e.clientX;
-    startScrollLeft = track.scrollLeft;
-    document.body.style.cursor = 'grabbing';
-    e.preventDefault();
-  });
-  document.addEventListener('mousemove', function(e) {
-    if (!isDragging) return;
-    const dx = e.clientX - startX;
-    const scrollWidth = track.scrollWidth - track.clientWidth;
-    const thumbWidth = thumb.offsetWidth;
-    const maxThumbMove = scrollTrack.offsetWidth - thumbWidth;
-    const percent = dx / maxThumbMove;
-    track.scrollLeft = startScrollLeft + percent * scrollWidth;
-  });
-  document.addEventListener('mouseup', function() {
-    isDragging = false;
-    document.body.style.cursor = '';
-  });
-  // Click on scrollbar track
-  scrollTrack.addEventListener('mousedown', function(e) {
-    if (e.target === thumb) return;
-    const rect = scrollTrack.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const thumbWidth = thumb.offsetWidth;
-    const maxThumbMove = scrollTrack.offsetWidth - thumbWidth;
-    const percent = x / maxThumbMove;
-    const scrollWidth = track.scrollWidth - track.clientWidth;
-    track.scrollLeft = percent * scrollWidth;
-  });
-}
-
-document.addEventListener('DOMContentLoaded', initTestimonialScrollbar);
-
-// Floating effect for service cards
-function initServiceAnimations() {
-  const serviceCards = document.querySelectorAll('.service-card');
-  
-  serviceCards.forEach((card, index) => {
-    // Add delay based on position for staggered animation
-    card.style.animationDelay = `${index * 0.1}s`;
-    
-    // Mouse move parallax effect
-    card.addEventListener('mousemove', (e) => {
-      const x = e.clientX - card.getBoundingClientRect().left;
-      const y = e.clientY - card.getBoundingClientRect().top;
-      
-      const centerX = card.clientWidth / 2;
-      const centerY = card.clientHeight / 2;
-      
-      const moveX = (x - centerX) / 20;
-      const moveY = (y - centerY) / 20;
-      
-      card.style.transform = `translateY(-10px) translate(${moveX}px, ${moveY}px) scale(1.02)`;
-    });
-    
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'translateY(-10px) scale(1.02)';
-    });
-  });
-}
-
-document.addEventListener('DOMContentLoaded', initServiceAnimations);
-
-// Service Cards 3D Tilt Effect
-function initServiceTilt() {
-  const serviceCards = document.querySelectorAll('.service-card');
-  
-  serviceCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const x = e.clientX - card.getBoundingClientRect().left;
-      const y = e.clientY - card.getBoundingClientRect().top;
-      
-      const centerX = card.offsetWidth / 2;
-      const centerY = card.offsetHeight / 2;
-      
-      const rotateX = (y - centerY) / 20;
-      const rotateY = (centerX - x) / 20;
-      
-      card.querySelector('.card-inner').style.transform = 
-        `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-    
-    card.addEventListener('mouseleave', () => {
-      card.querySelector('.card-inner').style.transform = 'rotateX(0) rotateY(0)';
-    });
-  });
-}
-
-// Client Cards Glow Effect
-function initClientGlow() {
-  const clientCards = document.querySelectorAll('.client-card');
-  
-  clientCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const x = e.clientX - card.getBoundingClientRect().left;
-      const y = e.clientY - card.getBoundingClientRect().top;
-      
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-    });
-  });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  initServiceTilt();
-  initClientGlow();
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Modal YouTube logic
-  document.querySelectorAll('.project-card a[data-yt]').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const ytId = this.getAttribute('data-yt');
-      document.getElementById('youtube-iframe').src = `https://www.youtube.com/embed/${ytId}?autoplay=1`;
-      document.getElementById('youtube-modal').style.display = 'flex';
-    });
-  });
-
-  document.querySelector('.youtube-modal-close').onclick = function() {
-    document.getElementById('youtube-modal').style.display = 'none';
-    document.getElementById('youtube-iframe').src = '';
-  };
-});
-
-function initProjectsFilter() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Remove active class dari semua button
-            filterButtons.forEach(b => b.classList.remove('active'));
-            
-            // Add active class ke button yang diklik
-            this.classList.add('active');
-            
-            const filterValue = this.getAttribute('data-filter').toLowerCase();
-            
-            // Filter projek
-            projectCards.forEach(card => {
-                const category = card.getAttribute('data-category').toLowerCase();
-                
-                if (filterValue === 'all' || category.includes(filterValue)) {
-                    card.style.display = 'block';
+/**
+ * Change language function
+ */
+function changeLanguage(lang) {
+    // Update translations
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const translation = translations[lang][key] || element.innerHTML;
+        if (element.children.length > 0) {
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = translation;
+            element.innerHTML = '';
+            Array.from(tempDiv.childNodes).forEach(node => {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    element.appendChild(document.createTextNode(node.textContent));
                 } else {
-                    card.style.display = 'none';
+                    element.appendChild(node.cloneNode(true));
                 }
             });
-            
-            // Reset pagination setelah filter
-            if (typeof initPagination === 'function') {
-                initPagination();
+        } else {
+            element.innerHTML = translation;
+        }
+    });
+
+    // Update placeholder attributes
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        element.placeholder = translations[lang][key] || element.placeholder || '';
+    });
+
+    // Update document title
+    document.title = translations[lang]['title'] || document.title;
+
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+
+    // Update selected language display (Desktop)
+    const selectedLang = document.querySelector('.navmenu .selected-lang');
+    if (selectedLang) {
+        const flagSrc = lang === 'id' ? 'img/indonesia.png' : 'img/inggris.png';
+        const langText = lang === 'id' ? 'Indonesia' : 'English';
+        selectedLang.innerHTML = `<img src="${flagSrc}" alt="${langText}" class="flag-icon">${langText}<i class="fas fa-chevron-down"></i>`;
+    }
+
+    // Update selected language display (Mobile)
+    const mobileSelectedLang = document.querySelector('.language-switcher-mobile .selected-lang');
+    if (mobileSelectedLang) {
+        const flagSrc = lang === 'id' ? 'img/indonesia.png' : 'img/inggris.png';
+        const langText = lang === 'id' ? 'Indonesia' : 'English';
+        mobileSelectedLang.innerHTML = `<img src="${flagSrc}" alt="${langText}" class="flag-icon">${langText}<i class="fas fa-chevron-down"></i>`;
+    }
+
+    // Save language preference
+    localStorage.setItem('language', lang);
+
+    // Tutup semua dropdown setelah memilih bahasa
+    const desktopDropdown = document.getElementById('language-options');
+    const mobileDropdown = document.getElementById('language-options-mobile');
+    if (desktopDropdown) {
+        desktopDropdown.classList.remove('active');
+        console.log('Desktop dropdown closed after language change'); // Debugging
+    }
+    if (mobileDropdown) {
+        mobileDropdown.classList.remove('active');
+        console.log('Mobile dropdown closed after language change'); // Debugging
+    }
+
+    // Refresh AOS
+    if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+    }
+}
+
+/**
+ * Initialize language switcher
+ */
+function initLanguageSwitcher() {
+    // Set bahasa awal tanpa membuka dropdown
+    const savedLang = localStorage.getItem('language') || 'id';
+    changeLanguage(savedLang);
+
+    // Pastikan dropdown tersembunyi saat inisialisasi
+    const desktopDropdown = document.getElementById('language-options');
+    const mobileDropdown = document.getElementById('language-options-mobile');
+    
+    if (desktopDropdown) {
+        desktopDropdown.classList.remove('active');
+        console.log('Desktop dropdown initialized, active:', desktopDropdown.classList.contains('active')); // Debugging
+    } else {
+        console.error('Desktop dropdown (#language-options) not found during initialization');
+    }
+    
+    if (mobileDropdown) {
+        mobileDropdown.classList.remove('active');
+        console.log('Mobile dropdown initialized, active:', mobileDropdown.classList.contains('active')); // Debugging
+    } else {
+        console.error('Mobile dropdown (#language-options-mobile) not found during initialization');
+    }
+
+    // Event listener untuk desktop language options
+    const desktopOptions = document.querySelectorAll('#language-options li');
+    desktopOptions.forEach(option => {
+        option.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const lang = option.getAttribute('data-lang');
+            changeLanguage(lang);
+        });
+    });
+
+    // Event listener untuk mobile language options
+    const mobileOptions = document.querySelectorAll('#language-options-mobile li');
+    mobileOptions.forEach(option => {
+        option.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const lang = option.getAttribute('data-lang');
+            changeLanguage(lang);
+            // Tutup mobile menu setelah memilih bahasa
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+            if (mobileMenu && mobileNavToggle) {
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+                mobileNavToggle.querySelector('i').classList.add('fa-bars');
+                mobileNavToggle.querySelector('i').classList.remove('fa-times');
             }
         });
     });
-}
 
-// Fungsi untuk pagination
-function initPagination() {
-  const pageLinks = document.querySelectorAll('.page-link');
-  const projectCards = document.querySelectorAll('.project-card');
-  const cardsPerPage = 6;
-  let currentPage = 1;
-  
-  function showPage(page) {
-    const startIndex = (page - 1) * cardsPerPage;
-    const endIndex = startIndex + cardsPerPage;
-    
-    projectCards.forEach((card, index) => {
-      if (index >= startIndex && index < endIndex && card.style.display !== 'none') {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-    
-    // Update active class pagination
-    pageLinks.forEach(link => {
-      link.classList.remove('active');
-      if (parseInt(link.textContent) === page) {
-        link.classList.add('active');
-      }
-    });
-    
-    // Enable/disable prev/next buttons
-    document.querySelector('.page-link:first-child').classList.toggle('disabled', page === 1);
-    document.querySelector('.page-link:last-child').classList.toggle('disabled', 
-      page === Math.ceil(projectCards.length / cardsPerPage));
-    
-    currentPage = page;
-  }
-  
-  // Event listeners untuk pagination
-  pageLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      if (this.classList.contains('disabled')) return;
-      
-      if (this.querySelector('.fa-chevron-left')) {
-        showPage(currentPage - 1);
-      } else if (this.querySelector('.fa-chevron-right')) {
-        showPage(currentPage + 1);
-      } else {
-        showPage(parseInt(this.textContent));
-      }
-    });
-  });
-  
-  // Tampilkan halaman pertama saat load
-  showPage(1);
-}
+    // Tutup dropdown saat klik di luar
+    document.addEventListener('click', (e) => {
+        const desktopDropdown = document.getElementById('language-options');
+        const desktopSelectedLang = document.querySelector('.navmenu .selected-lang');
+        const mobileDropdown = document.getElementById('language-options-mobile');
+        const mobileSelectedLang = document.querySelector('.language-switcher-mobile .selected-lang');
 
-document.addEventListener('DOMContentLoaded', function() {
-  initProjectsFilter();
-  initPagination();
-  
-  // Untuk project card dengan video YouTube
-  document.querySelectorAll('.project-card[data-category="video"]').forEach(card => {
-    card.addEventListener('click', function(e) {
-      if (!e.target.closest('.project-link')) {
-        const iframe = this.querySelector('iframe');
-        if (iframe) {
-          // Tampilkan video fullscreen atau modal
-          // Implementasi sesuai kebutuhan Anda
+        if (desktopDropdown && desktopSelectedLang && !desktopDropdown.contains(e.target) && !desktopSelectedLang.contains(e.target)) {
+            desktopDropdown.classList.remove('active');
+            console.log('Desktop dropdown closed on outside click');
         }
-      }
+        if (mobileDropdown && mobileSelectedLang && !mobileDropdown.contains(e.target) && !mobileSelectedLang.contains(e.target)) {
+            mobileDropdown.classList.remove('active');
+            console.log('Mobile dropdown closed on outside click');
+        }
     });
-  });
-});
 
-// Fungsi untuk modal video
-function initVideoModal() {
-    const modal = document.getElementById("videoModal");
-    const modalIframe = document.getElementById("ytPlayer");
-    const closeBtn = document.querySelector(".close-modal");
-    const videoLinks = document.querySelectorAll(".view-video");
-    
-    // Buka modal ketika video diklik
-    videoLinks.forEach(link => {
-        link.addEventListener("click", function(e) {
+    // Pastikan selected-lang memiliki event listener untuk toggle
+    const desktopSelectedLang = document.querySelector('.navmenu .selected-lang');
+    if (desktopSelectedLang) {
+        desktopSelectedLang.addEventListener('click', toggleLanguageDropdown);
+    } else {
+        console.error('Desktop selected-lang not found');
+    }
+
+    const mobileSelectedLang = document.querySelector('.language-switcher-mobile .selected-lang');
+    if (mobileSelectedLang) {
+        mobileSelectedLang.addEventListener('click', toggleLanguageDropdownMobile);
+    } else {
+        console.error('Mobile selected-lang not found');
+    }
+}
+document.addEventListener('DOMContentLoaded', () => {
+    // Set initial language
+    const savedLang = localStorage.getItem('language') || 'id';
+    const languageSwitcher = document.getElementById('language-switcher');
+    if (languageSwitcher) {
+        languageSwitcher.value = savedLang;
+        window.changeLanguage = changeLanguage;
+        changeLanguage(savedLang); // Panggil changeLanguage dengan bahasa awal
+    }
+
+    // Inisialisasi semua fungsi
+    initLanguageSwitcher(); // Tambahkan ini
+    initMobileNav();
+    aosInit();
+    navmenuScrollspy();
+});
+    /**
+     * Preloader
+     */
+    const preloader = document.querySelector('#preloader');
+    if (preloader) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.remove();
+                    if (typeof AOS !== 'undefined') {
+                        AOS.refresh();
+                    }
+                }, 500);
+            }, 1000);
+        });
+    }
+
+    /**
+     * Mobile navigation
+     */
+    function initMobileNav() {
+        const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        if (mobileNavToggle && mobileMenu && mobileMenuClose) {
+            mobileNavToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+                mobileNavToggle.querySelector('i').classList.toggle('fa-bars');
+                mobileNavToggle.querySelector('i').classList.toggle('fa-times');
+            });
+
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+               
+                mobileNavToggle.querySelector('i').classList.add('fa-bars');
+                mobileNavToggle.querySelector('i').classList.remove('fa-times');
+            });
+
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('active');
+                   
+                    mobileNavToggle.querySelector('i').classList.add('fa-bars');
+                    mobileNavToggle.querySelector('i').classList.remove('fa-times');
+                });
+            });
+        }
+    }
+
+    /**
+     * Scroll top button
+     */
+    const scrollTop = document.querySelector('.scroll-top');
+    if (scrollTop) {
+        function toggleScrollTop() {
+            window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+        }
+        scrollTop.addEventListener('click', (e) => {
             e.preventDefault();
-            const videoId = this.getAttribute("data-ytid");
-            modalIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-            modal.style.display = "flex";
-            document.body.style.overflow = "hidden"; // Mencegah scroll di background
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        window.addEventListener('load', toggleScrollTop);
+        document.addEventListener('scroll', toggleScrollTop);
+    }
+
+    /**
+     * Animation on scroll
+     */
+    function aosInit() {
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 600,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+        }
+    }
+
+    /**
+     * Navmenu scrollspy
+     */
+    function navmenuScrollspy() {
+        const navmenulinks = document.querySelectorAll('.navmenu a, .mobile-menu a');
+        function updateActiveLink() {
+            navmenulinks.forEach(navmenulink => {
+                if (!navmenulink.hash) return;
+                const section = document.querySelector(navmenulink.hash);
+                if (!section) return;
+                const position = window.scrollY + 200;
+                if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+                    navmenulinks.forEach(link => link.classList.remove('active'));
+                    navmenulink.classList.add('active');
+                } else {
+                    navmenulink.classList.remove('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', updateActiveLink);
+        window.addEventListener('load', updateActiveLink);
+    }
+
+    /**
+     * Initialize all functions
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+        // Set initial language
+        const savedLang = localStorage.getItem('language') || 'id';
+        const languageSwitcher = document.getElementById('language-switcher');
+        if (languageSwitcher) {
+            languageSwitcher.value = savedLang;
+            // Bind changeLanguage globally
+            window.changeLanguage = changeLanguage;
+            changeLanguage();
+        }
+
+        initMobileNav();
+        aosInit();
+        navmenuScrollspy();
+    });
+
+    /**
+     * About section animations
+     */
+    function initAboutAnimations() {
+        const profileContainer = document.querySelector('.profile-container');
+        if (profileContainer) {
+            document.addEventListener('mousemove', (e) => {
+                const x = (window.innerWidth / 2 - e.pageX) / 20;
+                const y = (window.innerHeight / 2 - e.pageY) / 20;
+                profileContainer.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', initAboutAnimations);
+
+    /**
+     * Service cards animations
+     */
+    function initServiceAnimations() {
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+            card.addEventListener('mousemove', (e) => {
+                const x = e.clientX - card.getBoundingClientRect().left;
+                const y = e.clientY - card.getBoundingClientRect().top;
+                const centerX = card.clientWidth / 2;
+                const centerY = card.clientHeight / 2;
+                const moveX = (x - centerX) / 20;
+                const moveY = (y - centerY) / 20;
+                card.style.transform = `translateY(-10px) translate(${moveX}px, ${moveY}px) scale(1.02)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', initServiceAnimations);
+
+    /**
+     * Client cards glow effect
+     */
+    function initClientGlow() {
+        const clientCards = document.querySelectorAll('.client-card');
+        clientCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const x = e.clientX - card.getBoundingClientRect().left;
+                const y = e.clientY - card.getBoundingClientRect().top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', initClientGlow);
+
+ /**
+ * Client Modal Functionality
+ */
+function initClientModal() {
+    const modal = document.getElementById('clientModal');
+    const modalImg = document.querySelector('.client-modal-img');
+    const modalTitle = document.querySelector('.client-modal-title');
+    const modalDesc = document.querySelector('.client-modal-desc');
+    const modalProjects = document.querySelector('.client-modal-projects');
+    const modalClose = document.querySelector('.client-modal-close');
+    const clientImages = document.querySelectorAll('.client-img');
+
+    // Debugging: Periksa apakah elemen ditemukan
+    console.log('clientModal:', modal);
+    console.log('clientImages found:', clientImages.length);
+
+    // Pastikan modal tersembunyi saat inisialisasi
+    if (modal) {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+    } else {
+        console.error('Modal element (#clientModal) not found');
+        return;
+    }
+
+    // Pasang event listener untuk setiap gambar klien
+    clientImages.forEach((img, index) => {
+        img.addEventListener('click', () => {
+            console.log(`Client image ${index} clicked`); // Debugging
+
+            const imgSrc = img.getAttribute('data-modal-img');
+            const imgTitle = img.getAttribute('alt')?.replace(' Logo', '') || 'Client';
+            const imgDesc = img.getAttribute('data-modal-desc') || 'No description available';
+            let projects = {};
+            try {
+                const projectsData = img.getAttribute('data-modal-projects');
+                if (projectsData) {
+                    projects = JSON.parse(projectsData);
+                }
+            } catch (e) {
+                console.error('Error parsing projects JSON for image', index, e);
+            }
+
+            // Isi konten modal
+            if (modalImg) modalImg.src = imgSrc;
+            if (modalTitle) modalTitle.textContent = imgTitle;
+            if (modalDesc) modalDesc.textContent = imgDesc;
+
+            // Generate project lists
+            const projectsContent = document.querySelector('.projects-content');
+            if (projectsContent) {
+                projectsContent.innerHTML = ''; // Clear previous content
+                if (Object.keys(projects).length > 0) {
+                    modalProjects.style.display = 'block';
+                    for (const [category, items] of Object.entries(projects)) {
+                        const categoryTitle = document.createElement('h5');
+                        categoryTitle.textContent = category;
+                        projectsContent.appendChild(categoryTitle);
+                        const ul = document.createElement('ul');
+                        items.forEach(item => {
+                            const li = document.createElement('li');
+                            li.textContent = item;
+                            ul.appendChild(li);
+                        });
+                        projectsContent.appendChild(ul);
+                    }
+                } else {
+                    modalProjects.style.display = 'none';
+                }
+            }
+
+            // Tampilkan modal
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden', 'false');
         });
     });
-    
-    // Tutup modal
-    closeBtn.addEventListener("click", function() {
-        modal.style.display = "none";
-        modalIframe.src = ""; // Hentikan video
-        document.body.style.overflow = "auto";
-    });
-    
-    // Tutup modal ketika klik di luar konten
-    window.addEventListener("click", function(e) {
-        if (e.target == modal) {
-            modal.style.display = "none";
-            modalIframe.src = "";
-            document.body.style.overflow = "auto";
-        }
-    });
-    
-    // Tutup modal dengan tombol ESC
-    document.addEventListener("keydown", function(e) {
-        if (e.key === "Escape" && modal.style.display === "flex") {
-            modal.style.display = "none";
-            modalIframe.src = "";
-            document.body.style.overflow = "auto";
+
+    // Close modal on close button click
+    if (modalClose) {
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+           
+        });
+    }
+
+    // Close modal on outside click
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
+               
+            }
+        });
+    }
+
+    // Close modal on Escape key press
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal && modal.style.display === 'flex') {
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+           
         }
     });
 }
 
-// Panggil fungsi ketika DOM siap
-document.addEventListener('DOMContentLoaded', function() {
-    initVideoModal();
-    // Fungsi lainnya...
-});
-
-// Preloader dan animasi awal
-document.addEventListener('DOMContentLoaded', function() {
-  // Set timeout untuk preloader
-  setTimeout(function() {
-    document.getElementById('preloader').style.opacity = '0';
-    setTimeout(function() {
-      document.getElementById('preloader').style.display = 'none';
-      
-      // Trigger AOS refresh setelah preloader hilang
-      AOS.refresh();
-      
-      // Animasi khusus untuk elemen hero
-      const heroContent = document.querySelector('.hero-content');
-      if (heroContent) {
-        heroContent.style.opacity = '0';
-        heroContent.style.transform = 'translateY(20px)';
-        setTimeout(function() {
-          heroContent.style.transition = 'all 0.8s ease-out';
-          heroContent.style.opacity = '1';
-          heroContent.style.transform = 'translateY(0)';
-        }, 100);
-      }
-    }, 500);
-  }, 1000);
-});
+// Initialize client modal when DOM is loaded
+document.addEventListener('DOMContentLoaded', initClientModal);
 })();
