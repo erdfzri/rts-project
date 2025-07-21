@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | Vision Studio</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/services.css">
 </head>
@@ -14,14 +14,14 @@
     <div id="preloader"></div>
 
     <!-- Header -->
-   <header class="header">
+    <header class="header">
         <div class="header-container container">
             <div class="logo">
                 <span>rtsproject</span>
             </div>
             <div class="menu-toggle">
-                    <div class="hamburger"></div>
-                </div>
+                <div class="hamburger"></div>
+            </div>
             <nav class="navmenu">
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
@@ -29,112 +29,124 @@
                     <li><a href="index.html#about">Tentang</a></li>
                     <li><a href="index.html#clients">Klien</a></li>
                     <li><a href="index.html#contact">Kontak</a></li>
+                    <div class="language-switcher">
+                        <div class="selected-lang">
+                            <img src="img/indonesia.png" alt="Indonesia" class="flag-icon">
+                            <span>Indonesia</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="language-options" id="language-options">
+                            <li data-lang="id">
+                                <img src="img/indonesia.png" alt="Indonesia" class="flag-icon"> Indonesia
+                            </li>
+                            <li data-lang="en">
+                                <img src="img/inggris.png" alt="English" class="flag-icon"> English
+                            </li>
+                        </ul>
+                    </div>
                 </ul>
-                
             </nav>
         </div>
     </header>
 
- <!-- Services Hero Section -->
-<section class="services-hero" data-aos="fade-down" data-aos-delay="100">
-    <div class="container">
-        <div class="section-header" data-aos="fade-up" data-aos-delay="200">
-            <h2>Layanan <span>Kami</span></h2>
-            <p>Solusi profesional yang disesuaikan dengan kebutuhan kreatif Anda</p>
-        </div>
-    </div>
-</section>
-
-
-<!-- Service Detail Section -->
-<section class="service-detail" id="service-detail">
-    <div class="container">
-        <div class="service-content" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-header" data-aos="fade-right" data-aos-delay="200">
-                <div class="service-icon">
-                    <div id="service-icon"></div>
-                </div>
-                <div class="service-title-wrap">
-                    <h2 id="service-title"></h2>
-                    <div class="service-meta">
-                        <span class="meta-item"><i class="fas fa-clock"></i> <span id="delivery-time"></span></span>
-                        <span class="meta-item"><i class="fas fa-tags"></i> Starting at <span id="starting-price"></span></span>
-                        <span class="meta-item"><i class="fas fa-star"></i> <span id="popularity"></span></span>
-                    </div>
-                </div>
+    <!-- Services Hero Section -->
+    <section class="services-hero" data-aos="fade-down" data-aos-delay="100">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up" data-aos-delay="200">
+                <h2>Layanan <span>Kami</span></h2>
+                <p>Solusi profesional yang disesuaikan dengan kebutuhan kreatif Anda</p>
             </div>
-            
-            <div class="service-body">
-                <div class="service-description-wrap" data-aos="fade-up" data-aos-delay="200">
-                    <p id="service-description"></p>
-                   <div class="service-highlights">
-    <div class="highlight-card" data-aos="fade-up" data-aos-delay="300">
-        <i class="fas fa-bolt"></i>
-        <h4>Pengerjaan Cepat</h4>
-        <p>Proyek Anda akan selesai sesuai waktu yang disepakati</p>
-    </div>
-    <div class="highlight-card" data-aos="fade-up" data-aos-delay="400">
-        <i class="fas fa-infinity"></i>
-        <h4>Revisi Tanpa Batas</h4>
-        <p>Kami akan terus menyempurnakan hingga Anda 100% puas</p>
-    </div>
-    <div class="highlight-card" data-aos="fade-up" data-aos-delay="500">
-        <i class="fas fa-headset"></i>
-        <h4>Dukungan 24/7</h4>
-        <p>Dukungan penuh selama proyek berlangsung</p>
-    </div>
-</div>
+        </div>
+    </section>
 
-                </div>
-                
-                <div class="service-features" data-aos="fade-up" data-aos-delay="200">
-                    <h3>What's Included</h3>
-                    <div class="features-grid">
-                        <ul id="service-features-list"></ul>
-                        <div class="features-image" data-aos="fade-left" data-aos-delay="300">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Service Features">
+    <!-- Service Detail Section -->
+    <section class="service-detail" id="service-detail">
+        <div class="container">
+            <div class="service-content" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-header" data-aos="fade-right" data-aos-delay="200">
+                    <div class="service-icon" id="service-icon"></div>
+                    <div class="service-title-wrap">
+                        <h2 id="service-title"></h2>
+                        <div class="service-meta">
+                            <span class="meta-item"><i class="fas fa-clock"></i> <span id="delivery-time"></span></span>
+                            <span class="meta-item"><i class="fas fa-tags"></i> <span id="starting-price"></span></span>
+                            <span class="meta-item"><i class="fas fa-star"></i> <span id="popularity"></span></span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="service-process" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Our Process</h3>
-                    <div class="process-timeline" id="process-steps"></div>
+                <div class="service-body">
+                    <div class="service-description-wrap" data-aos="fade-up" data-aos-delay="200">
+                        <p id="service-description"></p>
+                        <div class="service-highlights">
+                            <div class="highlight-card" data-aos="fade-up" data-aos-delay="300">
+                                <i class="fas fa-bolt"></i>
+                                <h4>Pengerjaan Cepat</h4>
+                                <p>Proyek Anda akan selesai sesuai waktu yang disepakati</p>
+                            </div>
+                            <div class="highlight-card" data-aos="fade-up" data-aos-delay="400">
+                                <i class="fas fa-infinity"></i>
+                                <h4>Revisi Tanpa Batas</h4>
+                                <p>Kami akan terus menyempurnakan hingga Anda 100% puas</p>
+                            </div>
+                            <div class="highlight-card" data-aos="fade-up" data-aos-delay="500">
+                                <i class="fas fa-headset"></i>
+                                <h4>Dukungan 24/7</h4>
+                                <p>Dukungan penuh selama proyek berlangsung</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-features" data-aos="fade-up" data-aos-delay="200">
+                        <h3>What's Included</h3>
+                        <div class="features-grid">
+                            <ul id="service-features-list"></ul>
+                            <div class="features-image" data-aos="fade-left" data-aos-delay="300">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Service Features">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-tools" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Tools We Use</h3>
+                        <div class="tools-grid" id="service-tools-list"></div>
+                    </div>
+                    
+                    <div class="service-process" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Our Process</h3>
+                        <div class="process-timeline" id="process-steps"></div>
+                    </div>
+                    
+                    <div class="service-examples" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Our Work Samples</h3>
+                        <div class="examples-grid" id="examples-grid"></div>
+                    </div>
+                    
+                    <div class="service-faq" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-accordion" id="faq-accordion"></div>
+                    </div>
+                    
+                    <div class="service-cta" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="cta-card">
+                            <h3>Siap Memulai Proyek Anda?</h3>
+                            <p>Wujudkan ide dan visi Anda bersama layanan profesional kami</p>
+                            <div class="cta-buttons">
+                                <a href="index.html#contact" class="btn btn-primary">Pesan Layanan Ini</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-               
-                
-                <div class="service-examples" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Our Work Samples</h3>
-                    <div class="examples-grid" id="examples-grid"></div>
-                </div>
-                
-                <div class="service-faq" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Frequently Asked Questions</h3>
-                    <div class="faq-accordion" id="faq-accordion"></div>
-                </div>
-                
-              <div class="service-cta" data-aos="zoom-in" data-aos-delay="100">
-    <div class="cta-card">
-        <h3>Siap Memulai Proyek Anda?</h3>
-        <p>Wujudkan ide dan visi Anda bersama layanan profesional kami</p>
-        <div class="cta-buttons">
-            <a href="index.html#contact" class="btn btn-primary">Pesan Layanan Ini</a>
-        </div>
-    </div>
-</div>
-
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-   <!-- Footer -->
-  <footer>
+    <!-- Footer -->
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <div class="logo">VISION<span>STUDIO</span></div>
+                    <div class="logo"><span>rtsprojects</span></div>
                     <p>Layanan editing foto dan video profesional untuk mewujudkan visi kreatif Anda dengan penceritaan visual yang memukau.</p>
                 </div>
                 <div class="footer-links">
@@ -148,47 +160,37 @@
                 </div>
                 <div class="footer-services">
                     <h4>Layanan</h4>
-                   <ul>
-  <li><a href="services.html?id=visual-editor" class="service-link">Editor Video</a></li>
-  <li><a href="services.html?id=visual-artist" class="service-link">Seniman Visual</a></li>
-  <li><a href="services.html?id=visual-jockey" class="service-link">Visual Jockey</a></li>
-  <li><a href="services.html?id=ai-content" class="service-link">Konten AI</a></li>
-</ul>
-
+                    <ul>
+                        <li><a href="services.html?id=video-editor" class="service-link">Editor Video</a></li>
+                        <li><a href="services.html?id=visual-artist" class="service-link">Seniman Visual</a></li>
+                        <li><a href="services.html?id=visual-jockey" class="service-link">Visual Jockey</a></li>
+                        <li><a href="services.html?id=ai-content" class="service-link">Konten AI</a></li>
+                    </ul>
                 </div>
                 <div class="footer-newsletter">
                     <h4>Buletin</h4>
                     <p>Berlangganan untuk tips editing dan penawaran khusus</p>
-                    <form>
-                        <input type="email" placeholder="Email Anda">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 rtsprojects. Seluruh hak cipta dilindungi.</p>
-                <div class="legal-links">
-                    <a href="#">Kebijakan Privasi</a>
-                    <a href="#">Syarat & Ketentuan</a>
-                </div>
+                <p>© 2025 rtsprojects. Seluruh hak cipta dilindungi.</p>
             </div>
         </div>
     </footer>
-
 
     <!-- Scroll Top Button -->
     <a href="#" class="scroll-top"><i class="fas fa-arrow-up"></i></a>
     
     <script src="assets/js/services.js"></script>
-    <script src="assets/js/script.js"></script>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
-    once: true,
-    mirror: false
-  });
-</script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    </script>
 </body>
 </html>

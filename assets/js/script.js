@@ -1,10 +1,4 @@
-/**
-* Template Name: Strategy
-* Template URL: https://bootstrapmade.com/strategy-bootstrap-agency-template/
-* Updated: Jun 06 2025 with Bootstrap v5.3.6
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 
 (function() {
   "use strict";
@@ -57,7 +51,7 @@ const translations = {
             "service-ai-content-feature-1": "Generasi Teks AI",
             "service-ai-content-feature-2": "Pembuatan Gambar AI",
             "service-ai-content-feature-3": "Peningkatan Video AI",
-            "service-link": "Detail Layanan",
+            "service-link": "Detail Layanan <i class=\"fas fa-arrow-right\"></i>",
             "clients-title": "Dipercaya <span>Oleh</span>",
             "clients-description": "Beberapa merek dan agensi yang percaya pada kami",
             "cta-badge": "Penawaran Khusus!",
@@ -132,7 +126,7 @@ const translations = {
             "service-ai-content-feature-1": "AI Text Generation",
             "service-ai-content-feature-2": "AI Image Creation",
             "service-ai-content-feature-3": "AI Video Enhancement",
-            "service-link": "Service Details",
+            "service-link": "Service Details <i class=\"fas fa-arrow-right\"></i>",
             "clients-title": "Trusted <span>By</span>",
             "clients-description": "Some brands and agencies that trust us",
             "cta-badge": "Special Offer!",
@@ -142,7 +136,7 @@ const translations = {
             "cta-feature-2": "Creative Visuals",
             "cta-feature-3": "Fast Process",
             "cta-start-project": "Start Your Project",
-            "cta-see-services": "View Services",
+            "cta-see-services": "View Services", 
             "contact-title": "Contact <span>Us</span>",
             "contact-description": "Let’s create something extraordinary together",
             "contact-text": "For consultations or booking editing services, please click the WhatsApp button below.",

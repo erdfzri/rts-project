@@ -191,9 +191,9 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1500px;
+  max-width: 1500px; /* Consistent with .container */
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 20px; /* Consistent with .container */
 }
 
 .logo {
@@ -477,14 +477,13 @@ img {
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-    position: relative;
-    min-height: 73vh;
-    display: flex;
-    align-items: center;
-    padding: 50px 0 100px;
-    background-color: var(--background-color);
-    overflow: hidden;
-    
+  position: relative;
+  min-height: 73vh;
+  display: flex;
+  align-items: center;
+  padding: 50px 0 100px;
+  background-color: var(--background-color);
+  overflow: hidden;
 }
 
 .hero::before {
@@ -499,13 +498,14 @@ img {
 }
 
 .hero-wrapper {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    max-width: 1400px;
-    margin: 0 auto;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1500px; /* Consistent with .container */
+  margin: 0 auto;
+  padding: 0 20px; /* Consistent with .container */
 }
 
 .hero-content {
@@ -634,7 +634,7 @@ img {
   position: relative;
   overflow: hidden;
   border-radius: 1.5rem;
-  box-shadow: 0 8px 40px rgba(138,43,226,0.08);
+  box-shadow: 0 8px 40px rgba(138, 43, 226, 0.08);
 }
 
 .services::before {
@@ -654,6 +654,9 @@ img {
   gap: 30px;
   position: relative;
   z-index: 1;
+  max-width: 1500px; /* Consistent with .container */
+  margin: 0 auto;
+  padding: 0 20px; /* Consistent with .container */
 }
 
 .service-card {
@@ -798,18 +801,16 @@ img {
 }
 
 
-/* About Section - Modern */
 .about-section {
   padding: 50px 0 120px 0;
   margin: 40px 0;
   border-radius: 1.5rem;
- /* background: linear-gradient(135deg, var(--background-color) 0%, #0f0c29 100%); */
+  background: rgba(15, 12, 41, 0.8);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 40px rgba(138,43,226,0.08);
-   backdrop-filter: blur(12px);
+  box-shadow: 0 8px 40px rgba(138, 43, 226, 0.08);
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(15, 12, 41, 0.8);
 }
 
 .about-content {
@@ -817,6 +818,9 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+  max-width: 1500px; /* Consistent with .container */
+  margin: 0 auto;
+  padding: 0 20px; /* Consistent with .container */
 }
 
 .about-text {
@@ -838,7 +842,7 @@ img {
 }
 
 .signature img {
-  height: 50px;
+  height: 90px;
   margin: 20px 0 40px;
   opacity: 0.9;
 }
@@ -998,8 +1002,8 @@ img {
 }
 
 .floating-element.clients {
-  bottom: 60px;
-  right: -20px;
+  bottom: 40px;
+  left: -30px;
   animation: float 5s ease-in-out infinite 1s;
 }
 
@@ -1020,6 +1024,7 @@ img {
   text-align: center;
   box-shadow: 0 20px 40px rgba(123, 11, 187, 0.3);
   z-index: 4;
+  animation: float 5s ease-in-out infinite 1s;
 }
 
 .experience-card .number {
@@ -1057,7 +1062,7 @@ img {
   background: linear-gradient(135deg, var(--background-color) 0%, #0f0c29 100%);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 40px rgba(138,43,226,0.08);
+  box-shadow: 0 8px 40px rgba(138, 43, 226, 0.08);
 }
 
 .clients-section::before {
@@ -1076,6 +1081,9 @@ img {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 10px;
   margin-top: 50px;
+  max-width: 1500px; /* Consistent with .container */
+  margin: 50px auto 0; /* Adjusted to maintain centering */
+  padding: 0 20px; /* Consistent with .container */
 }
 
 .client-card {
@@ -1372,7 +1380,7 @@ img {
   position: relative;
   overflow: hidden;
   margin: 40px 0;
-  box-shadow: 0 8px 40px rgba(138,43,226,0.08);
+  box-shadow: 0 8px 40px rgba(138, 43, 226, 0.08);
 }
 
 .advertise-1 {
@@ -1382,6 +1390,9 @@ img {
   align-items: center;
   position: relative;
   z-index: 2;
+  max-width: 1500px; /* Consistent with .container */
+  margin: 0 auto;
+  padding: 0 20px; /* Consistent with .container */
 }
 
 .content-left {
@@ -1585,6 +1596,9 @@ img {
 .contact-content {
   display: flex;
   gap: 50px;
+  max-width: 1500px; /* Consistent with .container */
+  margin: 0 auto;
+  padding: 0 20px; /* Consistent with .container */
 }
 
 /* .contact-info {
@@ -1716,11 +1730,14 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 40px;
   margin-bottom: 60px;
+  max-width: 1500px; /* Consistent with .container */
+  margin: 0 auto 60px; /* Adjusted to maintain centering */
+  padding: 0 20px; /* Consistent with .container */
 }
 
 .footer-about .logo {
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 1.8rem;
 }
 
@@ -1821,10 +1838,13 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.9rem;
+  max-width: 1500px; /* Consistent with .container */
+  margin: 0 auto;
+  padding: 20px 20px 0; /* Consistent with .container */
 }
 
 .legal-links {
