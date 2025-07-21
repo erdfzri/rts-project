@@ -211,6 +211,11 @@
     
     }
 
+    .logo-icon {
+  width: 50px;   /* atur ukuran sesuai kebutuhan */
+  height: auto;
+}
+
     /* Navigation */
     .navmenu ul {
     display: flex;

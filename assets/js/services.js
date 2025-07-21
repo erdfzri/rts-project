@@ -35,7 +35,7 @@ const translations = {
         "title": "Editor Video",
         "description": "Jasa editing video profesional untuk konten sinematik, promosi, dan media sosial dengan color grading tingkat lanjut. Tim kami mengubah footage mentah Anda menjadi cerita visual yang menarik dan memperkuat branding Anda.",
         "deliveryTime": "3–7 hari kerja",
-        "startingPrice": "Mulai dari Rp500.000",
+        "startingPrice": "Harga Mulai dari Rp500.000",
         "popularity": "Paling Diminati",
         "features": [
           "Editing Sinematik",
@@ -89,7 +89,7 @@ const translations = {
         "title": "Seniman Visual",
         "description": "Karya seni visual digital untuk berbagai kebutuhan—poster, ilustrasi, cover, media sosial, dan lainnya. Cocok untuk branding kreatif dan ekspresi artistik.",
         "deliveryTime": "2–5 hari kerja",
-        "startingPrice": "Mulai dari Rp500.000",
+        "startingPrice": "Harga Mulai dari Rp500.000",
         "popularity": "Favorit Kreator",
         "features": [
           "Ilustrasi Kustom",
@@ -143,7 +143,7 @@ const translations = {
         "title": "Visual Jockey (VJ)",
         "description": "Live visual performance untuk acara, konser, dan klub dengan animasi serta efek real-time. Menyajikan pengalaman visual interaktif yang dinamis dan memukau.",
         "deliveryTime": "On-Demand / Booking Event",
-        "startingPrice": "Mulai dari Rp2.000.000 per sesi",
+        "startingPrice": "Harga Mulai dari Rp2.000.000 per sesi",
         "popularity": "Top Performer Event",
         "features": [
           "Mixing Visual Langsung",
@@ -197,7 +197,7 @@ const translations = {
         "title": "Konten AI Kreatif",
         "description": "Layanan pembuatan konten berbasis kecerdasan buatan (AI) untuk artikel, caption media sosial, ide video, skrip, hingga konten visual. Cocok untuk pelaku bisnis, kreator, dan brand yang ingin efisiensi dalam produksi konten tanpa mengorbankan kualitas.",
         "deliveryTime": "1–3 hari kerja",
-        "startingPrice": "Mulai dari Rp300.000",
+        "startingPrice": "Harga Mulai dari Rp300.000",
         "popularity": "Solusi Modern",
         "features": [
           "Pembuatan Artikel Otomatis",
@@ -284,7 +284,7 @@ const translations = {
         "title": "Video Editor",
         "description": "Professional video editing services for cinematic content, promotions, and social media with advanced color grading. Our team transforms your raw footage into compelling visual stories that enhance your brand.",
         "deliveryTime": "3–7 business days",
-        "startingPrice": "Starting at IDR 500,000",
+        "startingPrice": "Starting Price at IDR 500,000",
         "popularity": "Most Popular",
         "features": [
           "Cinematic Editing",
@@ -338,7 +338,7 @@ const translations = {
         "title": "Visual Artist",
         "description": "Digital visual art for various needs—posters, illustrations, covers, social media, and more. Perfect for creative branding and artistic expression.",
         "deliveryTime": "2–5 business days",
-        "startingPrice": "Starting at IDR 500,000",
+        "startingPrice": "Starting Price at IDR 500,000",
         "popularity": "Creators' Favorite",
         "features": [
           "Custom Illustrations",
@@ -392,7 +392,7 @@ const translations = {
         "title": "Visual Jockey (VJ)",
         "description": "Live visual performance for events, concerts, and clubs with real-time animations and effects. Delivering dynamic and captivating interactive visual experiences.",
         "deliveryTime": "On-Demand / Event Booking",
-        "startingPrice": "Starting at IDR 2,000,000 per session",
+        "startingPrice": "Starting Price at IDR 2,000,000 per session",
         "popularity": "Top Event Performer",
         "features": [
           "Live Visual Mixing",
@@ -446,7 +446,7 @@ const translations = {
         "title": "Creative AI Content",
         "description": "AI-based content creation services for articles, social media captions, video ideas, scripts, and visual content. Ideal for businesses, creators, and brands seeking efficient content production without compromising quality.",
         "deliveryTime": "1–3 business days",
-        "startingPrice": "Starting at IDR 300,000",
+        "startingPrice": "Starting Price at IDR 300,000",
         "popularity": "Modern Solution",
         "features": [
           "Automated Article Creation",
