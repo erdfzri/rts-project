@@ -6,6 +6,11 @@ const translations = {
     "nav-about": "Tentang",
     "nav-clients": "Klien",
     "nav-contact": "Kontak",
+    "hero-service-subtext": "Eksplorasi Layanan",
+    "hero-service-title": "Detail Layanan <span>Profesional</span>",
+    "hero-service-desc": "Pelajari lebih lanjut mengenai fitur, proses kerja, dan nilai tambah dari layanan yang kami berikan. Kami memastikan setiap solusi disesuaikan secara spesifik untuk kesuksesan proyek Anda.",
+    "hero-service-btn-1": "Lihat Detail",
+    "hero-service-btn-2": "Konsultasi Gratis",
     "services-hero-title": "Layanan Kami",
     "services-hero-subtitle": "Solusi profesional yang disesuaikan dengan kebutuhan kreatif Anda",
     "highlight-fast-delivery": "Pengerjaan Cepat",
@@ -14,14 +19,15 @@ const translations = {
     "highlight-unlimited-revisions-desc": "Kami akan terus menyempurnakan hingga Anda 100% puas",
     "highlight-support": "Dukungan 24/7",
     "highlight-support-desc": "Dukungan penuh selama proyek berlangsung",
-    "features-title": "What's Included",
-    "process-title": "Our Process",
-    "examples-title": "Our Work Samples",
-    "faq-title": "Frequently Asked Questions",
+    "features-title": "Apa Saja yang Termasuk",
+    "tools-title": "Alat yang Digunakan",
+    "process-title": "Proses Kerja",
+    "examples-title": "Contoh Karya Kami",
+    "faq-title": "Pertanyaan Tersering (FAQ)",
     "cta-title": "Siap Memulai Proyek Anda?",
     "cta-description": "Wujudkan ide dan visi Anda bersama layanan profesional kami",
     "cta-button": "Pesan Layanan Ini",
-    "footer-about": "Layanan editing foto dan video profesional untuk mewujudkan visi kreatif Anda dengan penceritaan visual yang memukau.",
+    "footer-about": "Layanan editing video dan pembangunan aplikasi web profesional untuk mewujudkan visi kreatif dan kehadiran digital Anda.",
     "footer-quick-links": "Tautan Cepat",
     "footer-services": "Layanan",
     "footer-newsletter": "Buletin",
@@ -99,14 +105,14 @@ const translations = {
         "startingPrice": "Harga Mulai dari Rp1.000.000",
         "popularity": "Solusi Enterprise",
         "features": [
-          "Kustom Web Application",
-          "Responsive Design",
-          "Database Integration",
-          "User Authentication",
-          "API Development",
-          "Admin Dashboard",
-          "Security Optimization",
-          "Maintenance Support"
+          "Aplikasi Web Kustom",
+          "Desain Responsif",
+          "Integrasi Database",
+          "Autentikasi Pengguna",
+          "Pengembangan API",
+          "Dashboard Admin",
+          "Optimasi Keamanan",
+          "Dukungan Pemeliharaan"
         ],
         "process": [
           {
@@ -156,6 +162,11 @@ const translations = {
     "nav-about": "About",
     "nav-clients": "Clients",
     "nav-contact": "Contact",
+    "hero-service-subtext": "Explore Services",
+    "hero-service-title": "<span>Professional</span> Service Details",
+    "hero-service-desc": "Learn more about the features, workflow, and added value of the services we provide. We ensure every solution is specifically tailored for the success of your project.",
+    "hero-service-btn-1": "View Details",
+    "hero-service-btn-2": "Free Consultation",
     "services-hero-title": "Our Services",
     "services-hero-subtitle": "Professional solutions tailored to your creative needs",
     "highlight-fast-delivery": "Fast Delivery",
@@ -165,13 +176,14 @@ const translations = {
     "highlight-support": "24/7 Support",
     "highlight-support-desc": "Full support throughout your project",
     "features-title": "What's Included",
+    "tools-title": "Tools We Use",
     "process-title": "Our Process",
     "examples-title": "Our Work Samples",
     "faq-title": "Frequently Asked Questions",
     "cta-title": "Ready to Start Your Project?",
     "cta-description": "Bring your ideas and vision to life with our professional services",
     "cta-button": "Order This Service",
-    "footer-about": "Professional photo and video editing services to bring your creative vision to life with stunning visual storytelling.",
+    "footer-about": "Professional video editing and web application development services to bring your creative vision and digital presence to life.",
     "footer-quick-links": "Quick Links",
     "footer-services": "Services",
     "footer-newsletter": "Newsletter",
@@ -467,14 +479,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Update services hero section
-    const heroTitle = document.querySelector('.services-hero .section-header h2');
-    if (heroTitle) {
-      heroTitle.innerHTML = translations[lang]['services-hero-title'].replace('Kami', `<span>Kami</span>`);
-    }
-    const heroSubtitle = document.querySelector('.services-hero .section-header p');
-    if (heroSubtitle) {
-      heroSubtitle.textContent = translations[lang]['services-hero-subtitle'];
-    }
+    const heroSubtext = document.querySelector('.hero-subtext');
+    if (heroSubtext) heroSubtext.textContent = translations[lang]['hero-service-subtext'];
+
+    const heroTitle = document.querySelector('.hero-content h2');
+    if (heroTitle) heroTitle.innerHTML = translations[lang]['hero-service-title'];
+
+    const heroDesc = document.querySelector('.hero-content p');
+    if (heroDesc) heroDesc.textContent = translations[lang]['hero-service-desc'];
+
+    const heroBtn1 = document.querySelector('.hero-actions .btn-primary');
+    if (heroBtn1) heroBtn1.textContent = translations[lang]['hero-service-btn-1'];
+
+    const heroBtn2 = document.querySelector('.hero-actions .btn-secondary');
+    if (heroBtn2) heroBtn2.textContent = translations[lang]['hero-service-btn-2'];
 
     // Update highlight cards
     const highlightCards = document.querySelectorAll('.highlight-card');
