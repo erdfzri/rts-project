@@ -29,51 +29,51 @@ const translations = {
             "about-clients": "150+ Klien",
             "about-experience": "Tahun Pengalaman",
             "about-experience-desc": "Bekerja sama dengan merek dan agensi global",
+            "about-subtitle": "KENALI KAMI LEBIH DEKAT",
+            "about-heading": "Solusi Kreatif untuk <span class='moving-gradient'>Editing Video</span> dan <span class='moving-gradient'>Web App Development</span>",
+            "about-desc": "rtsprojects hadir sebagai mitra kreativitas Anda dalam mewujudkan visi visual dan kehadiran digital yang berpengaruh. Kami menggabungkan keahlian editing video sinematik dengan pembangunan Web App modern untuk membantu brand Anda tampil maksimal.",
+            "about-bar-1": "Video Editing Profesional",
+            "about-bar-2": "Web App Development",
+            "about-bar-3": "Dukungan Penuh",
+            "about-bar-4": "Harga Kompetitif",
             "services-title": "Layanan <span>Kami</span>",
             "services-description": "Solusi profesional sesuai kebutuhan kreatif Anda",
-            "service-video-editor-title": "Video Editor",
+            "service-video-editor-title": "Video Editing",
             "service-video-editor-desc": "Editing video profesional untuk konten sinematik, promosi, dan media sosial dengan color grading tingkat lanjut.",
             "service-video-editor-feature-1": "Editing Sinematik",
-            "service-video-editor-feature-2": "Grafis Bergerak",
+            "service-video-editor-feature-2": "Efek Visual",
             "service-video-editor-feature-3": "Color Grading",
-            "service-visual-artist-title": "Visual Artist",
-            "service-visual-artist-desc": "Ilustrasi digital, manipulasi foto, dan desain grafis untuk branding dan proyek pribadi.",
-            "service-visual-artist-feature-1": "Ilustrasi Digital",
-            "service-visual-artist-feature-2": "Manipulasi Foto",
-            "service-visual-artist-feature-3": "Desain Grafis",
-            "service-visual-jockey-title": "Visual Jockey",
-            "service-visual-jockey-desc": "Performa visual langsung untuk acara, konser, dan klub dengan animasi serta efek real-time.",
-            "service-visual-jockey-feature-1": "Mixer Visual Langsung",
-            "service-visual-jockey-feature-2": "Animasi Real-time",
-            "service-visual-jockey-feature-3": "Pengaturan Visual Acara",
-            "service-ai-content-title": "AI Content",
-            "service-ai-content-desc": "Pembuatan konten berbasis AI termasuk teks, gambar, dan peningkatan video otomatis.",
-            "service-ai-content-feature-1": "Generasi Teks AI",
-            "service-ai-content-feature-2": "Pembuatan Gambar AI",
-            "service-ai-content-feature-3": "Peningkatan Video AI",
+            "service-webapp-title": "Web App Development",
+            "service-webapp-desc": "Pengembangan aplikasi berbasis web yang kustom, responsif, dan fungsional sesuai kebutuhan bisnis Anda.",
+            "service-webapp-feature-1": "Kustom Web App",
+            "service-webapp-feature-2": "User Experience",
+            "service-webapp-feature-3": "Integrasi Sistem",
             "service-link": "Detail Layanan <i class=\"fas fa-arrow-right\"></i>",
+            "hero-service-subtext": "Eksplorasi Layanan",
+            "hero-service-title": "Detail Layanan <span>Profesional</span>",
+            "hero-service-desc": "Pelajari lebih lanjut mengenai fitur, proses kerja, dan nilai tambah dari layanan yang kami berikan. Kami memastikan setiap solusi disesuaikan secara spesifik untuk kesuksesan proyek Anda.",
+            "hero-service-btn-1": "Lihat Detail",
+            "hero-service-btn-2": "Konsultasi Gratis",
             "clients-title": "Dipercaya <span>Oleh</span>",
             "clients-description": "Beberapa merek dan agensi yang percaya pada kami",
             "cta-badge": "Penawaran Khusus!",
-            "cta-title": "Tingkatkan Cerita Visual Anda Hari Ini",
-            "cta-description": "Maksimalkan potensi konten Anda dengan editing profesional, narasi kuat, dan hasil sinematik. Biarkan kami mengubah cuplikan mentah Anda menjadi visual memukau yang menginspirasi.",
+            "cta-title": "Tingkatkan Visual dan Kehadiran Digital Anda",
+            "cta-description": "Maksimalkan potensi brand Anda dengan editing video profesional dan pengembangan aplikasi web inovatif. Kami transformasikan ide Anda menjadi solusi digital yang memukau dan fungsional.",
             "cta-feature-1": "Editing Sinematik",
-            "cta-feature-2": "Visual Kreatif",
+            "cta-feature-2": "Web App Modern",
             "cta-feature-3": "Proses Cepat",
             "cta-start-project": "Mulai Proyek Anda",
             "cta-see-services": "Lihat Layanan",
             "contact-title": "Hubungi <span>Kami</span>",
             "contact-description": "Mari buat sesuatu yang luar biasa bersama",
-            "contact-text": "Untuk konsultasi atau pemesanan jasa editing, silakan langsung klik tombol WhatsApp di bawah ini.",
+            "contact-text": "Untuk konsultasi atau pemesanan layanan kami, silakan langsung klik tombol WhatsApp di bawah ini.",
             "contact-whatsapp": "Hubungi via WhatsApp",
             "contact-alt": "Atau hubungi kami melalui",
             "footer-about": "Layanan editing foto dan video profesional untuk mewujudkan visi kreatif Anda dengan penceritaan visual yang memukau.",
             "footer-links-title": "Tautan Cepat",
             "footer-services-title": "Layanan",
-            "footer-service-video-editor": "Video Editor",
-            "footer-service-visual-artist": "Visual Artist",
-            "footer-service-visual-jockey": "Visual Jockey",
-            "footer-service-ai-content": "AI Content",
+            "footer-service-video-editor": "Video Editing",
+            "footer-service-webapp": "Web App Development",
             "footer-newsletter-title": "Buletin",
             "footer-newsletter-desc": "Berlangganan untuk tips editing dan penawaran khusus",
             "footer-newsletter-placeholder": "Email Anda",
@@ -104,51 +104,51 @@ const translations = {
             "about-clients": "150+ Clients",
             "about-experience": "Years of Experience",
             "about-experience-desc": "Collaborating with global brands and agencies",
+            "about-subtitle": "GET TO KNOW US BETTER",
+            "about-heading": "Creative Solutions for <span class='moving-gradient'>Video Editing</span> and <span class='moving-gradient'>Web App Development</span>",
+            "about-desc": "rtsprojects serves as your creative partner in realizing an influential visual vision and digital presence. We combine cinematic video editing expertise with modern Web App development to help your brand stand out.",
+            "about-bar-1": "Professional Video Editing",
+            "about-bar-2": "Web App Development",
+            "about-bar-3": "Full Support",
+            "about-bar-4": "Competitive Pricing",
             "services-title": "Our <span>Services</span>",
             "services-description": "Professional solutions tailored to your creative needs",
-            "service-video-editor-title": "Video Editor",
+            "service-video-editor-title": "Video Editing",
             "service-video-editor-desc": "Professional video editing for cinematic content, promotions, and social media with advanced color grading.",
             "service-video-editor-feature-1": "Cinematic Editing",
-            "service-video-editor-feature-2": "Motion Graphics",
+            "service-video-editor-feature-2": "Visual Effects",
             "service-video-editor-feature-3": "Color Grading",
-            "service-visual-artist-title": "Visual Artist",
-            "service-visual-artist-desc": "Digital illustrations, photo manipulation, and graphic design for branding and personal projects.",
-            "service-visual-artist-feature-1": "Digital Illustration",
-            "service-visual-artist-feature-2": "Photo Manipulation",
-            "service-visual-artist-feature-3": "Graphic Design",
-            "service-visual-jockey-title": "Visual Jockey",
-            "service-visual-jockey-desc": "Live visual performances for events, concerts, and clubs with real-time animations and effects.",
-            "service-visual-jockey-feature-1": "Live Visual Mixer",
-            "service-visual-jockey-feature-2": "Real-time Animation",
-            "service-visual-jockey-feature-3": "Event Visual Setup",
-            "service-ai-content-title": "AI Content",
-            "service-ai-content-desc": "AI-based content creation including text, images, and automated video enhancements.",
-            "service-ai-content-feature-1": "AI Text Generation",
-            "service-ai-content-feature-2": "AI Image Creation",
-            "service-ai-content-feature-3": "AI Video Enhancement",
+            "service-webapp-title": "Web App Development",
+            "service-webapp-desc": "Custom, responsive, and functional web-based application development tailored to your business needs.",
+            "service-webapp-feature-1": "Custom Web App",
+            "service-webapp-feature-2": "User Experience",
+            "service-webapp-feature-3": "System Integration",
             "service-link": "Service Details <i class=\"fas fa-arrow-right\"></i>",
+            "hero-service-subtext": "Explore Services",
+            "hero-service-title": "<span>Professional</span> Service Details",
+            "hero-service-desc": "Learn more about the features, workflow, and added value of the services we provide. We ensure every solution is specifically tailored for the success of your project.",
+            "hero-service-btn-1": "View Details",
+            "hero-service-btn-2": "Free Consultation",
             "clients-title": "Trusted <span>By</span>",
             "clients-description": "Some brands and agencies that trust us",
             "cta-badge": "Special Offer!",
-            "cta-title": "Elevate Your Visual Story Today",
-            "cta-description": "Maximize your content’s potential with professional editing, powerful narratives, and cinematic results. Let us transform your raw footage into stunning visuals that inspire.",
+            "cta-title": "Elevate Your Visual and Digital Presence",
+            "cta-description": "Maximize your brand’s potential with professional video editing and innovative web app development. Let us transform your ideas into stunning and functional digital solutions.",
             "cta-feature-1": "Cinematic Editing",
-            "cta-feature-2": "Creative Visuals",
+            "cta-feature-2": "Modern Web Apps",
             "cta-feature-3": "Fast Process",
             "cta-start-project": "Start Your Project",
             "cta-see-services": "View Services", 
             "contact-title": "Contact <span>Us</span>",
             "contact-description": "Let’s create something extraordinary together",
-            "contact-text": "For consultations or booking editing services, please click the WhatsApp button below.",
+            "contact-text": "For consultations or booking our services, please click the WhatsApp button below.",
             "contact-whatsapp": "Contact via WhatsApp",
             "contact-alt": "Or reach us through",
             "footer-about": "Professional photo and video editing services to bring your creative vision to life with captivating visual storytelling.",
             "footer-links-title": "Quick Links",
             "footer-services-title": "Services",
-            "footer-service-video-editor": "Video Editor",
-            "footer-service-visual-artist": "Visual Artist",
-            "footer-service-visual-jockey": "Visual Jockey",
-            "footer-service-ai-content": "AI Content",
+            "footer-service-video-editor": "Video Editing",
+            "footer-service-webapp": "Web App Development",
             "footer-newsletter-title": "Newsletter",
             "footer-newsletter-desc": "Subscribe for editing tips and special offers",
             "footer-newsletter-placeholder": "Your Email",
@@ -644,6 +644,37 @@ function initClientModal() {
     });
 }
 
-// Initialize client modal when DOM is loaded
-document.addEventListener('DOMContentLoaded', initClientModal);
+// Initialize mobile menu
+function initMobileMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.navmenu ul');
+    
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+}
+
+// Initialize components when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initClientModal();
+    initMobileMenu();
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+    });
+});
 })();

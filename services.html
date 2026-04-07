@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | Vision Studio</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/services.css">
 </head>
+
 <body>
     <!-- Preloader -->
     <div id="preloader"></div>
@@ -16,10 +22,10 @@
     <!-- Header -->
     <header class="header">
         <div class="header-container container">
-             <div class="logo">
-            <img src="img/logo.png" alt="logo" class="logo-icon">
-            <span>rtsproject</span>
-        </div>
+            <div class="logo">
+                <img src="img/logo.png" alt="logo" class="logo-icon">
+                <span>rtsproject</span>
+            </div>
             <div class="menu-toggle">
                 <div class="hamburger"></div>
             </div>
@@ -53,9 +59,20 @@
     <!-- Services Hero Section -->
     <section class="services-hero" data-aos="fade-down" data-aos-delay="100">
         <div class="container">
-            <div class="section-header" data-aos="fade-up" data-aos-delay="200">
-                <h2>Layanan <span>Kami</span></h2>
-                <p>Solusi profesional yang disesuaikan dengan kebutuhan kreatif Anda</p>
+            <div class="hero-content" data-aos="fade-right" data-aos-delay="200">
+                <span class="hero-subtext" data-i18n="hero-service-subtext">Eksplorasi Layanan</span>
+                <h2 data-i18n="hero-service-title">Detail Layanan <span>Profesional</span></h2>
+                <p data-i18n="hero-service-desc">Pelajari lebih lanjut mengenai fitur, proses kerja, dan nilai tambah
+                    dari layanan yang kami berikan. Kami memastikan setiap solusi disesuaikan secara spesifik untuk
+                    kesuksesan proyek Anda.</p>
+                <div class="hero-actions">
+                    <a href="#service-detail" class="btn btn-primary" data-i18n="hero-service-btn-1">Lihat Detail</a>
+                    <a href="index.html#contact" class="btn btn-secondary" data-i18n="hero-service-btn-2">Konsultasi
+                        Gratis</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper" data-aos="fade-left" data-aos-delay="400">
+                <img src="img/service-hero-illustration.png" alt="Ilustrasi Layanan Teknologi" />
             </div>
         </div>
     </section>
@@ -75,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="service-body">
                     <div class="service-description-wrap" data-aos="fade-up" data-aos-delay="200">
                         <p id="service-description"></p>
@@ -97,37 +114,37 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="service-features" data-aos="fade-up" data-aos-delay="200">
                         <h3>What's Included</h3>
                         <div class="features-grid">
                             <ul id="service-features-list"></ul>
                             <div class="features-image" data-aos="fade-left" data-aos-delay="300">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Service Features">
+                                <img id="feature-image" src="" alt="Service Feature Details">
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="service-tools" data-aos="fade-up" data-aos-delay="200">
                         <h3>Tools We Use</h3>
                         <div class="tools-grid" id="service-tools-list"></div>
                     </div>
-                    
+
                     <div class="service-process" data-aos="fade-up" data-aos-delay="100">
                         <h3>Our Process</h3>
                         <div class="process-timeline" id="process-steps"></div>
                     </div>
-                    
-                    <div class="service-examples" data-aos="fade-up" data-aos-delay="100">
+
+                    <!-- <div class="service-examples" data-aos="fade-up" data-aos-delay="100">
                         <h3>Our Work Samples</h3>
                         <div class="examples-grid" id="examples-grid"></div>
-                    </div>
-                    
+                    </div> -->
+
                     <div class="service-faq" data-aos="fade-up" data-aos-delay="100">
                         <h3>Frequently Asked Questions</h3>
                         <div class="faq-accordion" id="faq-accordion"></div>
                     </div>
-                    
+
                     <div class="service-cta" data-aos="zoom-in" data-aos-delay="100">
                         <div class="cta-card">
                             <h3>Siap Memulai Proyek Anda?</h3>
@@ -148,7 +165,8 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="logo"><span>rtsprojects</span></div>
-                    <p>Layanan editing foto dan video profesional untuk mewujudkan visi kreatif Anda dengan penceritaan visual yang memukau.</p>
+                    <p>Layanan editing foto dan video profesional untuk mewujudkan visi kreatif Anda dengan penceritaan
+                        visual yang memukau.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Tautan Cepat</h4>
@@ -162,10 +180,8 @@
                 <div class="footer-services">
                     <h4>Layanan</h4>
                     <ul>
-                        <li><a href="services.html?id=video-editor" class="service-link">Video Editor</a></li>
-                        <li><a href="services.html?id=visual-artist" class="service-link">Visual Artist</a></li>
-                        <li><a href="services.html?id=visual-jockey" class="service-link">Visual Jockey</a></li>
-                        <li><a href="services.html?id=ai-content" class="service-link">AI Content</a></li>
+                        <li><a href="services.html?id=video-editor" class="service-link">Video Editing</a></li>
+                        <li><a href="services.html?id=web-app" class="service-link">Web App Development</a></li>
                     </ul>
                 </div>
                 <div class="footer-newsletter">
@@ -181,7 +197,7 @@
 
     <!-- Scroll Top Button -->
     <a href="#" class="scroll-top"><i class="fas fa-arrow-up"></i></a>
-    
+
     <script src="assets/js/services.js"></script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -194,7 +210,8 @@
         });
     </script>
     <script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="ugUpaiUHpGZOG06u9vQZg";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+        (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "ugUpaiUHpGZOG06u9vQZg"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+    </script>
 </body>
+
 </html>

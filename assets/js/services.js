@@ -79,172 +79,73 @@ const translations = {
             "answer": "Ya, file proyek mentah dapat diberikan berdasarkan permintaan dengan biaya tambahan."
           }
         ],
+        "tools": [
+          { "name": "Premiere Pro", "icon": "fas fa-video" },
+          { "name": "After Effects", "icon": "fas fa-magic" },
+          { "name": "DaVinci Resolve", "icon": "fas fa-palette" },
+          { "name": "Audition", "icon": "fas fa-music" },
+          { "name": "Photoshop", "icon": "fas fa-image" }
+        ],
         "examples": [
           { "title": "Aftermovie Festival Musik" },
           { "title": "Video Promosi Brand" },
           { "title": "Film Perjalanan" }
         ]
       },
-      "visual-artist": {
-        "title": "Seniman Visual",
-        "description": "Karya seni visual digital untuk berbagai kebutuhan—poster, ilustrasi, cover, media sosial, dan lainnya. Cocok untuk branding kreatif dan ekspresi artistik.",
-        "deliveryTime": "2–5 hari kerja",
-        "startingPrice": "Harga Mulai dari Rp500.000",
-        "popularity": "Favorit Kreator",
+      "web-app": {
+        "title": "Web App Development",
+        "description": "Pengembangan aplikasi berbasis web yang kustom, responsif, dan fungsional sesuai kebutuhan bisnis Anda. Kami membangun sistem yang andal untuk membantu operasional dan pertumbuhan bisnis Anda.",
+        "deliveryTime": "7–30 hari kerja",
+        "startingPrice": "Harga Mulai dari Rp1.000.000",
+        "popularity": "Solusi Enterprise",
         "features": [
-          "Ilustrasi Kustom",
-          "Digital Painting",
-          "Cover Album / Buku",
-          "Desain Karakter",
-          "Komposisi Warna Artistik",
-          "Resolusi Tinggi",
-          "File Siap Cetak",
-          "Hak Penggunaan Komersial"
+          "Kustom Web Application",
+          "Responsive Design",
+          "Database Integration",
+          "User Authentication",
+          "API Development",
+          "Admin Dashboard",
+          "Security Optimization",
+          "Maintenance Support"
         ],
         "process": [
           {
-            "title": "Diskusi Konsep",
-            "description": "Kami gali ide dan preferensi visual Anda untuk menyusun konsep awal."
+            "title": "Analisa Kebutuhan",
+            "description": "Kami mendalami alur bisnis Anda untuk menentukan fitur dan arsitektur aplikasi yang tepat."
           },
           {
-            "title": "Pembuatan Sketsa",
-            "description": "Membuat draft ilustrasi awal sesuai gaya yang diinginkan."
+            "title": "Tahap Development",
+            "description": "Proses coding dan integrasi sistem menggunakan teknologi web modern."
           },
           {
-            "title": "Detail & Pewarnaan",
-            "description": "Ilustrasi dipoles dengan warna dan detail yang menyatu."
-          },
-          {
-            "title": "Finalisasi",
-            "description": "File akhir dikirim dalam format digital sesuai permintaan."
+            "title": "Testing & Launch",
+            "description": "Pengujian menyeluruh untuk memastikan aplikasi bebas bug sebelum diluncurkan."
           }
         ],
         "faqs": [
           {
-            "question": "Apakah bisa request gaya ilustrasi tertentu?",
-            "answer": "Tentu! Anda bisa memberikan referensi atau menjelaskan gaya yang diinginkan."
+            "question": "Apakah aplikasi bisa diakses di mobile?",
+            "answer": "Ya, semua aplikasi yang kami bangun bersifat responsive, sehingga tampil sempurna di smartphone maupun PC."
           },
           {
-            "question": "Bisa digunakan untuk komersial?",
-            "answer": "Ya, semua karya bisa digunakan untuk keperluan komersial sesuai kesepakatan."
-          },
-          {
-            "question": "Format file apa yang akan saya terima?",
-            "answer": "Anda akan mendapatkan file dalam format PNG/JPEG dan juga file mentah seperti PSD jika diperlukan."
+            "question": "Apakah ada biaya maintenance?",
+            "answer": "Kami menyediakan paket maintenance gratis untuk 3 bulan pertama setelah peluncuran."
           }
+        ],
+        "tools": [
+          { "name": "HTML", "icon": "devicon-html5-plain colored" },
+          { "name": "CSS", "icon": "devicon-css3-plain colored" },
+          { "name": "PHP", "icon": "devicon-php-plain colored" },
+          { "name": "React", "icon": "devicon-react-original colored" },
+          { "name": "Laravel", "icon": "devicon-laravel-plain colored" },
+          { "name": "Java", "icon": "devicon-java-plain colored" },
+          { "name": "Kotlin", "icon": "devicon-kotlin-plain colored" },
+          { "name": "Spring Boot", "icon": "devicon-spring-plain colored" }
         ],
         "examples": [
-          { "title": "Ilustrasi Album Musik" },
-          { "title": "Poster Film Independen" },
-          { "title": "Desain Karakter Fiksi" }
-        ]
-      },
-      "visual-jockey": {
-        "title": "Visual Jockey (VJ)",
-        "description": "Live visual performance untuk acara, konser, dan klub dengan animasi serta efek real-time. Menyajikan pengalaman visual interaktif yang dinamis dan memukau.",
-        "deliveryTime": "On-Demand / Booking Event",
-        "startingPrice": "Harga Mulai dari Rp2.000.000 per sesi",
-        "popularity": "Top Performer Event",
-        "features": [
-          "Mixing Visual Langsung",
-          "Efek Real-Time",
-          "Integrasi Musik",
-          "Kontrol Resolusi Layar",
-          "Loop & Sample Kustom",
-          "Sinkronisasi Audio Visual",
-          "Visual Interaktif",
-          "Mapping Proyeksi"
-        ],
-        "process": [
-          {
-            "title": "Konsultasi Event",
-            "description": "Diskusi kebutuhan visual, lokasi acara, dan peralatan."
-          },
-          {
-            "title": "Setup & Integrasi",
-            "description": "Integrasi peralatan VJ dengan sistem visual dan suara."
-          },
-          {
-            "title": "Live Performance",
-            "description": "Visual real-time disesuaikan dengan alur acara dan musik."
-          },
-          {
-            "title": "Backup & Dokumentasi",
-            "description": "Jika diperlukan, hasil pertunjukan dapat direkam dan didokumentasikan."
-          }
-        ],
-        "faqs": [
-          {
-            "question": "Apakah visual bisa disesuaikan dengan tema acara?",
-            "answer": "Bisa, semua visual dapat disesuaikan berdasarkan mood, warna, dan irama acara Anda."
-          },
-          {
-            "question": "Apakah perlu membawa peralatan sendiri?",
-            "answer": "Kami bisa menggunakan peralatan Anda atau menyediakan perangkat kami sendiri sesuai kesepakatan."
-          },
-          {
-            "question": "Bisa tampil di lebih dari satu sesi?",
-            "answer": "Tentu, kami siap untuk multi-sesi dan event besar, tinggal koordinasikan waktu dan teknisnya."
-          }
-        ],
-        "examples": [
-          { "title": "VJ Konser Elektronik" },
-          { "title": "Visual untuk DJ Set" },
-          { "title": "Live Mapping Stage" }
-        ]
-      },
-      "ai-content": {
-        "title": "Konten AI Kreatif",
-        "description": "Layanan pembuatan konten berbasis kecerdasan buatan (AI) untuk artikel, caption media sosial, ide video, skrip, hingga konten visual. Cocok untuk pelaku bisnis, kreator, dan brand yang ingin efisiensi dalam produksi konten tanpa mengorbankan kualitas.",
-        "deliveryTime": "1–3 hari kerja",
-        "startingPrice": "Harga Mulai dari Rp300.000",
-        "popularity": "Solusi Modern",
-        "features": [
-          "Pembuatan Artikel Otomatis",
-          "Caption Sosial Media Kreatif",
-          "Skrip Video & Podcast",
-          "Visual AI (Image Generation)",
-          "Optimasi SEO",
-          "Penulisan Multibahasa",
-          "Gaya Penulisan yang Fleksibel",
-          "100% Bisa Diedit Ulang"
-        ],
-        "process": [
-          {
-            "title": "Diskusi Kebutuhan",
-            "description": "Kami memahami target audiens, jenis konten yang diinginkan, dan tujuan utama konten Anda."
-          },
-          {
-            "title": "Produksi Konten AI",
-            "description": "Menggunakan teknologi AI seperti ChatGPT, GPT-4, DALL·E, dan lainnya untuk membuat konten berkualitas."
-          },
-          {
-            "title": "Revisi & Penyesuaian",
-            "description": "Kami sesuaikan gaya penulisan, tone, dan hasil konten sesuai masukan Anda."
-          },
-          {
-            "title": "Finalisasi & Pengiriman",
-            "description": "File akhir dikirim dalam format teks, PDF, atau sesuai permintaan Anda."
-          }
-        ],
-        "faqs": [
-          {
-            "question": "Apakah hasil konten bisa diedit ulang?",
-            "answer": "Tentu saja! Semua konten bisa Anda edit atau kembangkan lebih lanjut sesuai kebutuhan brand Anda."
-          },
-          {
-            "question": "Apakah konten bebas plagiarisme?",
-            "answer": "Kami menggunakan AI dengan sistem pengecekan plagiarisme untuk memastikan konten bersih dan orisinal."
-          },
-          {
-            "question": "Apakah bisa request gaya bahasa tertentu?",
-            "answer": "Bisa, kami mendukung penyesuaian gaya formal, santai, profesional, bahkan lucu dan santuy."
-          }
-        ],
-        "examples": [
-          { "title": "Ide Konten Instagram untuk Brand Fashion" },
-          { "title": "Artikel SEO untuk Website Produk Digital" },
-          { "title": "Caption & Hashtag Media Sosial UMKM" }
+          { "title": "Sistem Manajemen Inventaris" },
+          { "title": "Dashboard Analitik Bisnis" },
+          { "title": "Platform E-learning" }
         ]
       }
     }
@@ -328,172 +229,77 @@ const translations = {
             "answer": "Yes, raw project files can be provided upon request for an additional fee."
           }
         ],
+        "tools": [
+          { "name": "Premiere Pro", "icon": "fas fa-video" },
+          { "name": "After Effects", "icon": "fas fa-magic" },
+          { "name": "DaVinci Resolve", "icon": "fas fa-palette" },
+          { "name": "Audition", "icon": "fas fa-music" },
+          { "name": "Photoshop", "icon": "fas fa-image" }
+        ],
         "examples": [
           { "title": "Music Festival Aftermovie" },
           { "title": "Brand Promotion Video" },
           { "title": "Travel Film" }
         ]
       },
-      "visual-artist": {
-        "title": "Visual Artist",
-        "description": "Digital visual art for various needs—posters, illustrations, covers, social media, and more. Perfect for creative branding and artistic expression.",
-        "deliveryTime": "2–5 business days",
-        "startingPrice": "Starting Price at IDR 500,000",
-        "popularity": "Creators' Favorite",
+      "web-app": {
+        "title": "Web App Development",
+        "description": "Custom, responsive, and functional web-based application development tailored to your business needs. We build reliable systems to support your business operations and growth.",
+        "deliveryTime": "14–30 business days",
+        "startingPrice": "Starting Price at IDR 5,000,000",
+        "popularity": "Enterprise Solution",
         "features": [
-          "Custom Illustrations",
-          "Digital Painting",
-          "Album/Book Cover",
-          "Character Design",
-          "Artistic Color Composition",
-          "High Resolution",
-          "Print-Ready Files",
-          "Commercial Use Rights"
+          "Custom Web Application",
+          "Responsive Design",
+          "Database Integration",
+          "User Authentication",
+          "API Development",
+          "Admin Dashboard",
+          "Security Optimization",
+          "Maintenance Support"
         ],
         "process": [
           {
-            "title": "Concept Discussion",
-            "description": "We explore your ideas and visual preferences to create an initial concept."
+            "title": "Needs Analysis",
+            "description": "We dive into your business flow to determine the right features and application architecture."
           },
           {
-            "title": "Sketch Creation",
-            "description": "Drafting initial illustrations based on the desired style."
+            "title": "UI/UX Design",
+            "description": "Creating intuitive and user-friendly design prototypes."
           },
           {
-            "title": "Detailing & Coloring",
-            "description": "Polishing the illustration with cohesive colors and details."
+            "title": "Development Phase",
+            "description": "Coding process and system integration using modern web technologies."
           },
           {
-            "title": "Finalization",
-            "description": "Final files are delivered in your requested digital format."
+            "title": "Testing & Launch",
+            "description": "Thorough testing to ensure a bug-free application before launch."
           }
         ],
         "faqs": [
           {
-            "question": "Can I request a specific illustration style?",
-            "answer": "Absolutely! You can provide references or describe the desired style."
+            "question": "Is the application mobile-accessible?",
+            "answer": "Yes, all applications we build are responsive, looking perfect on both smartphones and PCs."
           },
           {
-            "question": "Can it be used for commercial purposes?",
-            "answer": "Yes, all artwork can be used commercially based on the agreement."
-          },
-          {
-            "question": "What file formats will I receive?",
-            "answer": "You will receive files in PNG/JPEG formats and raw files like PSD if needed."
+            "question": "Is there a maintenance fee?",
+            "answer": "We provide a free maintenance package for the first 3 months after launch."
           }
+        ],
+        "tools": [
+          { "name": "HTML", "icon": "devicon-html5-plain colored" },
+          { "name": "CSS", "icon": "devicon-css3-plain colored" },
+          { "name": "PHP", "icon": "devicon-php-plain colored" },
+          { "name": "React", "icon": "devicon-react-original colored" },
+          { "name": "Laravel", "icon": "devicon-laravel-plain colored" },
+          { "name": "Java", "icon": "devicon-java-plain colored" },
+          { "name": "Kotlin", "icon": "devicon-kotlin-plain colored" },
+          { "name": "Spring Boot", "icon": "devicon-spring-plain colored" }
         ],
         "examples": [
-          { "title": "Music Album Illustration" },
-          { "title": "Independent Film Poster" },
-          { "title": "Fictional Character Design" }
-        ]
-      },
-      "visual-jockey": {
-        "title": "Visual Jockey (VJ)",
-        "description": "Live visual performance for events, concerts, and clubs with real-time animations and effects. Delivering dynamic and captivating interactive visual experiences.",
-        "deliveryTime": "On-Demand / Event Booking",
-        "startingPrice": "Starting Price at IDR 2,000,000 per session",
-        "popularity": "Top Event Performer",
-        "features": [
-          "Live Visual Mixing",
-          "Real-Time Effects",
-          "Music Integration",
-          "Screen Resolution Control",
-          "Custom Loops & Samples",
-          "Audiovisual Synchronization",
-          "Interactive Visuals",
-          "Projection Mapping"
-        ],
-        "process": [
-          {
-            "title": "Event Consultation",
-            "description": "Discussing visual needs, event venue, and equipment."
-          },
-          {
-            "title": "Setup & Integration",
-            "description": "Integrating VJ equipment with visual and sound systems."
-          },
-          {
-            "title": "Live Performance",
-            "description": "Real-time visuals tailored to the event flow and music."
-          },
-          {
-            "title": "Backup & Documentation",
-            "description": "If needed, performances can be recorded and documented."
-          }
-        ],
-        "faqs": [
-          {
-            "question": "Can visuals be customized to the event theme?",
-            "answer": "Yes, all visuals can be tailored based on the event's mood, colors, and rhythm."
-          },
-          {
-            "question": "Do I need to provide my own equipment?",
-            "answer": "We can use your equipment or provide our own based on the agreement."
-          },
-          {
-            "question": "Can you perform in multiple sessions?",
-            "answer": "Absolutely, we are ready for multi-session and large events, just coordinate the timing and technical details."
-          }
-        ],
-        "examples": [
-          { "title": "Electronic Concert VJ" },
-          { "title": "Visuals for DJ Set" },
-          { "title": "Live Stage Mapping" }
-        ]
-      },
-      "ai-content": {
-        "title": "Creative AI Content",
-        "description": "AI-based content creation services for articles, social media captions, video ideas, scripts, and visual content. Ideal for businesses, creators, and brands seeking efficient content production without compromising quality.",
-        "deliveryTime": "1–3 business days",
-        "startingPrice": "Starting Price at IDR 300,000",
-        "popularity": "Modern Solution",
-        "features": [
-          "Automated Article Creation",
-          "Creative Social Media Captions",
-          "Video & Podcast Scripts",
-          "AI Visuals (Image Generation)",
-          "SEO Optimization",
-          "Multilingual Writing",
-          "Flexible Writing Styles",
-          "100% Editable Content"
-        ],
-        "process": [
-          {
-            "title": "Needs Discussion",
-            "description": "We understand your target audience, desired content type, and main content goals."
-          },
-          {
-            "title": "AI Content Production",
-            "description": "Using AI technologies like ChatGPT, GPT-4, DALL·E, and others to create high-quality content."
-          },
-          {
-            "title": "Revision & Adjustment",
-            "description": "We adjust the writing style, tone, and content based on your feedback."
-          },
-          {
-            "title": "Finalization & Delivery",
-            "description": "Final files are delivered in text, PDF, or your requested format."
-          }
-        ],
-        "faqs": [
-          {
-            "question": "Can the content be edited further?",
-            "answer": "Of course! All content can be edited or developed further to suit your brand's needs."
-          },
-          {
-            "question": "Is the content plagiarism-free?",
-            "answer": "We use AI with plagiarism-checking systems to ensure clean and original content."
-          },
-          {
-            "question": "Can I request a specific writing style?",
-            "answer": "Yes, we support custom styles—formal, casual, professional, or even fun and relaxed."
-          }
-        ],
-        "examples": [
-          { "title": "Instagram Content Ideas for Fashion Brand" },
-          { "title": "SEO Article for Digital Product Website" },
-          { "title": "Social Media Captions & Hashtags for SMEs" }
+          { "title": "Inventory Management System" },
+          { "title": "Business Analytics Dashboard" },
+          { "title": "E-learning Platform" }
         ]
       }
     }
@@ -504,6 +310,7 @@ const translations = {
 const services = {
   'video-editor': {
     icon: '<i class="fas fa-film"></i>',
+    featureImage: 'img/service-video-3d.png',
     examples: [
       {
         title: 'Aftermovie Festival Musik',
@@ -522,63 +329,24 @@ const services = {
       }
     ]
   },
-  'visual-artist': {
-    icon: '<i class="fas fa-paint-brush"></i>',
+  'web-app': {
+    icon: '<i class="fas fa-laptop-code"></i>',
+    featureImage: 'img/service-webapp-3d.png',
     examples: [
       {
-        title: 'Ilustrasi Album Musik',
-        image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
-        link: 'all-work.html#visual1'
+        title: 'Sistem Manajemen Inventaris',
+        image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80',
+        link: 'all-work.html#webapp1'
       },
       {
-        title: 'Poster Film Independen',
-        image: 'https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=1200&q=80',
-        link: 'all-work.html#visual2'
+        title: 'Dashboard Analitik Bisnis',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+        link: 'all-work.html#webapp2'
       },
       {
-        title: 'Desain Karakter Fiksi',
-        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80',
-        link: 'all-work.html#visual3'
-      }
-    ]
-  },
-  'visual-jockey': {
-    icon: '<i class="fas fa-lightbulb"></i>',
-    examples: [
-      {
-        title: 'VJ Konser Elektronik',
-        image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=1200&q=80',
-        link: 'all-work.html#vj1'
-      },
-      {
-        title: 'Visual untuk DJ Set',
-        image: 'https://images.unsplash.com/photo-1498772776854-56d9b1cb0362?auto=format&fit=crop&w=1200&q=80',
-        link: 'all-work.html#vj2'
-      },
-      {
-        title: 'Live Mapping Stage',
-        image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=80',
-        link: 'all-work.html#vj3'
-      }
-    ]
-  },
-  'ai-content': {
-    icon: '<i class="fas fa-robot"></i>',
-    examples: [
-      {
-        title: 'Ide Konten Instagram untuk Brand Fashion',
-        image: 'https://images.unsplash.com/photo-1611262588024-d12430b989ad?auto=format&fit=crop&w=1200&q=80',
-        link: 'all-work.html#ai1'
-      },
-      {
-        title: 'Artikel SEO untuk Website Produk Digital',
-        image: 'https://images.unsplash.com/photo-1519331379826-b2e2a7f74e26?auto=format&fit=crop&w=1200&q=80',
-        link: 'all-work.html#ai2'
-      },
-      {
-        title: 'Caption & Hashtag Media Sosial UMKM',
-        image: 'https://images.unsplash.com/photo-1610397962084-d08ccf26b40e?auto=format&fit=crop&w=1200&q=80',
-        link: 'all-work.html#ai3'
+        title: 'Platform E-learning',
+        image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1200&q=80',
+        link: 'all-work.html#webapp3'
       }
     ]
   }
@@ -595,15 +363,15 @@ document.addEventListener('DOMContentLoaded', function () {
   // Get language from URL or localStorage, default to 'id'
   const urlParams = new URLSearchParams(window.location.search);
   let currentLang = urlParams.get('lang') || localStorage.getItem('language') || 'id';
-  
+
   // Validate language to ensure it's either 'id' or 'en'
   if (!['id', 'en'].includes(currentLang)) {
     currentLang = 'id';
   }
-  
+
   // Save initial language to localStorage
   localStorage.setItem('language', currentLang);
-  
+
   // Update content with initial language
   updateLanguage(currentLang);
 
@@ -792,12 +560,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (footerServices.length >= 4) {
       footerServices[0].textContent = translations[lang].services['video-editor'].title;
       footerServices[0].href = `services.html?id=video-editor${lang !== 'id' ? '&lang=' + lang : ''}`;
-      footerServices[1].textContent = translations[lang].services['visual-artist'].title;
-      footerServices[1].href = `services.html?id=visual-artist${lang !== 'id' ? '&lang=' + lang : ''}`;
-      footerServices[2].textContent = translations[lang].services['visual-jockey'].title;
-      footerServices[2].href = `services.html?id=visual-jockey${lang !== 'id' ? '&lang=' + lang : ''}`;
-      footerServices[3].textContent = translations[lang].services['ai-content'].title;
-      footerServices[3].href = `services.html?id=ai-content${lang !== 'id' ? '&lang=' + lang : ''}`;
+      footerServices[1].textContent = translations[lang].services['web-app'].title;
+      footerServices[1].href = `services.html?id=web-app${lang !== 'id' ? '&lang=' + lang : ''}`;
+      // Clean up others if they exist
+      for (let i = 2; i < footerServices.length; i++) {
+        footerServices[i].style.display = 'none';
+      }
     }
 
     // Update service details based on URL parameter
@@ -834,15 +602,35 @@ document.addEventListener('DOMContentLoaded', function () {
         serviceIcon.innerHTML = originalService.icon;
       }
 
+      const toolsList = document.getElementById('service-tools-list');
+      if (toolsList && service.tools) {
+        toolsList.innerHTML = '';
+        service.tools.forEach(tool => {
+          const toolItem = document.createElement('div');
+          toolItem.className = 'tool-item';
+          toolItem.innerHTML = `
+            <div class="tool-icon"><i class="${tool.icon}"></i></div>
+            <span class="tool-name">${tool.name}</span>
+          `;
+          toolsList.appendChild(toolItem);
+        });
+      }
+
       // Update features
       const featuresList = document.getElementById('service-features-list');
-      if (featuresList) {
+      if (featuresList && service.features) {
         featuresList.innerHTML = '';
         service.features.forEach(feature => {
           const li = document.createElement('li');
           li.innerHTML = `<i class="fas fa-check"></i> ${feature}`;
           featuresList.appendChild(li);
         });
+      }
+
+      // Update feature image
+      const featureImageElement = document.getElementById('feature-image');
+      if (featureImageElement && originalService.featureImage) {
+        featureImageElement.src = originalService.featureImage;
       }
 
       // Update process
@@ -966,4 +754,28 @@ document.addEventListener('DOMContentLoaded', function () {
       setTimeout(animateElements, 300);
     }
   }
+
+  // Initialize mobile menu
+  function initMobileMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.navmenu ul');
+    
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+  }
+
+  initMobileMenu();
 });
