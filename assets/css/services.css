@@ -49,6 +49,12 @@
         width: 100%;
     }
 
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
     /*--------------------------------------------------------------
     # General Styling & Shared Classes
     --------------------------------------------------------------*/
@@ -521,7 +527,7 @@
     /* Services Hero Section - Updated to match service-detail style */
     .services-hero {
         position: relative;
-        padding: 80px 0 40px;
+        padding: 120px 0 40px;
         background: #f8f9fc;
         overflow: hidden;
         margin-bottom: 0;
@@ -1336,24 +1342,36 @@
         align-items: center;
         justify-content: center;
         font-size: 2.2rem;
-        color: var(--accent-color);
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
         border: 1px solid rgba(0, 0, 0, 0.03);
         transition: all 0.3s ease;
     }
 
     .tool-icon i.colored {
-        color: initial;
+        color: unset !important;
+    }
+
+    .brand-logo {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+        filter: none !important;
+        opacity: 1 !important;
+        transition: transform 0.3s ease;
     }
 
     .tool-item:hover .tool-icon {
-        background: var(--accent-color);
-        color: white;
-        box-shadow: 0 15px 30px rgba(138, 43, 226, 0.2);
+        background: #ffffff; /* Keep background white on hover to preserve logo colors */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .tool-item:hover .brand-logo {
+        transform: scale(1.1);
     }
 
     .tool-item:hover .tool-icon i.colored {
-        filter: brightness(0) invert(1);
+        filter: none; /* Removed white invert effect */
     }
 
     .tool-name {
@@ -1642,7 +1660,7 @@
 
     @media (max-width: 991px) {
         .services-hero {
-            padding: 60px 0 30px;
+            padding: 130px 0 30px;
         }
 
         .services-hero .container {
@@ -1757,7 +1775,22 @@
         }
 
         .services-hero {
-            padding: 80px 0 40px; /* Increased to clear fixed header */
+            padding: 130px 0 40px;
+        }
+
+        .services-hero .container {
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            gap: 8px;
+            /* Reduced to provide more space */
+            padding: 0 10px !important;
+            /* Slightly more edge room */
+        }
+
+        .hero-content {
+            padding-right: 0 !important;
+            /* Ensure no extra space pushing image */
         }
 
         .service-content {
@@ -1767,7 +1800,8 @@
         }
 
         .hero-content h2 {
-            font-size: 1.4rem; /* Improved visibility */
+            font-size: 1.4rem;
+            /* Improved visibility */
             min-width: 0;
         }
 
@@ -1783,10 +1817,29 @@
             white-space: nowrap;
         }
 
+        .hero-actions {
+            justify-content: flex-start;
+            gap: 10px;
+        }
+
         .hero-image-wrapper {
-            flex: 0 0 35%; /* Reduce image size to give more room to text */
+            flex: 0 0 35%;
+            /* Fixed ratio for mobile */
+            max-width: 35%;
+            display: flex;
             justify-content: flex-end;
-            margin-top: 0;
+            order: 2;
+            margin: 0;
+            padding-top: 0;
+            overflow: visible;
+            /* Prevent clipping of image shadows */
+        }
+
+        .hero-image-wrapper img {
+            transform: scale(1);
+            /* Removed scale to prevent clipping */
+            max-width: 100%;
+            height: auto;
         }
 
         .service-highlights {
@@ -1837,17 +1890,34 @@
             font-size: 1.6rem;
         }
 
+        .service-features h3 {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
         .features-grid {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
-            flex-wrap: nowrap;
-            gap: 10px;
+            gap: 20px;
         }
 
         .features-grid ul {
-            flex: 1 1 auto;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+            order: 2;
+            padding: 0;
+        }
+
+        .features-image {
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto;
             order: 1;
+            display: flex;
+            justify-content: center;
         }
 
         .service-features li {
@@ -1887,7 +1957,23 @@
 
     @media (max-width: 576px) {
         .services-hero {
-            padding: 70px 0 30px;
+            padding: 120px 0 30px;
+        }
+
+        .services-hero .container {
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-image-wrapper {
+            flex: 0 0 35%;
+            max-width: 35%;
+        }
+
+        .hero-image-wrapper img {
+            transform: scale(1);
+            /* Removed scale to prevent clipping */
         }
 
         .hero-content h2 {
@@ -1896,10 +1982,6 @@
 
         .hero-content p {
             font-size: 0.75rem;
-        }
-
-        .hero-image-wrapper {
-            flex: 0 0 30%; /* Even smaller image for text room */
         }
 
         .service-header {
@@ -1934,7 +2016,8 @@
         }
 
         .service-highlights {
-            gap: 6px;
+            grid-template-columns: 1fr;
+            gap: 10px;
         }
 
         .highlight-card {

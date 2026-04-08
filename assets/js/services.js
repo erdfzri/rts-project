@@ -86,11 +86,11 @@ const translations = {
           }
         ],
         "tools": [
-          { "name": "Premiere Pro", "icon": "fas fa-video" },
-          { "name": "After Effects", "icon": "fas fa-magic" },
-          { "name": "DaVinci Resolve", "icon": "fas fa-palette" },
-          { "name": "Audition", "icon": "fas fa-music" },
-          { "name": "Photoshop", "icon": "fas fa-image" }
+          { "name": "Premiere Pro", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" },
+          { "name": "After Effects", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg" },
+          { "name": "DaVinci Resolve", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/davinciresolve/davinciresolve-original.svg" },
+          { "name": "Audition", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adobeaudition/adobeaudition-original.svg" },
+          { "name": "Photoshop", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg" }
         ],
         "examples": [
           { "title": "Aftermovie Festival Musik" },
@@ -139,14 +139,14 @@ const translations = {
           }
         ],
         "tools": [
-          { "name": "HTML", "icon": "devicon-html5-plain colored" },
-          { "name": "CSS", "icon": "devicon-css3-plain colored" },
-          { "name": "PHP", "icon": "devicon-php-plain colored" },
-          { "name": "React", "icon": "devicon-react-original colored" },
-          { "name": "Laravel", "icon": "devicon-laravel-plain colored" },
-          { "name": "Java", "icon": "devicon-java-plain colored" },
-          { "name": "Kotlin", "icon": "devicon-kotlin-plain colored" },
-          { "name": "Spring Boot", "icon": "devicon-spring-plain colored" }
+          { "name": "HTML", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+          { "name": "CSS", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+          { "name": "PHP", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+          { "name": "React", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+          { "name": "Laravel", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" },
+          { "name": "Java", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+          { "name": "Kotlin", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" },
+          { "name": "Spring Boot", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" }
         ],
         "examples": [
           { "title": "Sistem Manajemen Inventaris" },
@@ -242,11 +242,11 @@ const translations = {
           }
         ],
         "tools": [
-          { "name": "Premiere Pro", "icon": "fas fa-video" },
-          { "name": "After Effects", "icon": "fas fa-magic" },
-          { "name": "DaVinci Resolve", "icon": "fas fa-palette" },
-          { "name": "Audition", "icon": "fas fa-music" },
-          { "name": "Photoshop", "icon": "fas fa-image" }
+          { "name": "Premiere Pro", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" },
+          { "name": "After Effects", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg" },
+          { "name": "DaVinci Resolve", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/davinciresolve/davinciresolve-original.svg" },
+          { "name": "Audition", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adobeaudition/adobeaudition-original.svg" },
+          { "name": "Photoshop", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg" }
         ],
         "examples": [
           { "title": "Music Festival Aftermovie" },
@@ -299,14 +299,14 @@ const translations = {
           }
         ],
         "tools": [
-          { "name": "HTML", "icon": "devicon-html5-plain colored" },
-          { "name": "CSS", "icon": "devicon-css3-plain colored" },
-          { "name": "PHP", "icon": "devicon-php-plain colored" },
-          { "name": "React", "icon": "devicon-react-original colored" },
-          { "name": "Laravel", "icon": "devicon-laravel-plain colored" },
-          { "name": "Java", "icon": "devicon-java-plain colored" },
-          { "name": "Kotlin", "icon": "devicon-kotlin-plain colored" },
-          { "name": "Spring Boot", "icon": "devicon-spring-plain colored" }
+          { "name": "HTML", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+          { "name": "CSS", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+          { "name": "PHP", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+          { "name": "React", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+          { "name": "Laravel", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" },
+          { "name": "Java", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+          { "name": "Kotlin", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" },
+          { "name": "Spring Boot", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" }
         ],
         "examples": [
           { "title": "Inventory Management System" },
@@ -626,8 +626,12 @@ document.addEventListener('DOMContentLoaded', function () {
         service.tools.forEach(tool => {
           const toolItem = document.createElement('div');
           toolItem.className = 'tool-item';
+          const toolIconHtml = tool.icon.includes('http') 
+            ? `<img src="${tool.icon}" alt="${tool.name}" class="brand-logo">` 
+            : `<i class="${tool.icon}"></i>`;
+          
           toolItem.innerHTML = `
-            <div class="tool-icon"><i class="${tool.icon}"></i></div>
+            <div class="tool-icon">${toolIconHtml}</div>
             <span class="tool-name">${tool.name}</span>
           `;
           toolsList.appendChild(toolItem);
@@ -777,21 +781,21 @@ document.addEventListener('DOMContentLoaded', function () {
   function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.navmenu ul');
-    
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
 
-        // Close menu when clicking on a link
-        const navLinks = navMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', function () {
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close menu when clicking on a link
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
         });
+      });
     }
   }
 
